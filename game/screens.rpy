@@ -246,13 +246,14 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("되감기") action Rollback()
-            textbutton _("대사록") action ShowMenu('history')
-            textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("자동진행") action Preference("auto-forward", "toggle")
+            # textbutton _("되감기") action Rollback()
+            # textbutton _("대사록") action ShowMenu('history')
+            # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("자동진행") action Preference("auto-forward", "toggle")
             textbutton _("저장하기") action ShowMenu('save')
-            textbutton _("Q.저장하기") action QuickSave()
-            textbutton _("Q.불러오기") action QuickLoad()
+            textbutton _("불러오기") action ShowMenu('load')
+            # textbutton _("Q.저장하기") action QuickSave()
+            # textbutton _("Q.불러오기") action QuickLoad()
             textbutton _("설정") action ShowMenu('preferences')
 
 
@@ -298,7 +299,7 @@ screen navigation():
 
         else:
 
-            textbutton _("대사록") action ShowMenu("history")
+            # textbutton _("대사록") action ShowMenu("history")
 
             textbutton _("저장하기") action ShowMenu("save")
 
@@ -306,20 +307,20 @@ screen navigation():
 
         textbutton _("환경설정") action ShowMenu("preferences")
 
-        if _in_replay:
+        # if _in_replay:
 
-            textbutton _("리플레이 끝내기") action EndReplay(confirm=True)
+        #     textbutton _("리플레이 끝내기") action EndReplay(confirm=True)
 
-        elif not main_menu:
+        if not main_menu:
 
             textbutton _("메인 메뉴") action MainMenu()
 
-        textbutton _("버전정보") action ShowMenu("about")
+        # textbutton _("버전정보") action ShowMenu("about")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## 도움말 메뉴는 모바일 디바이스와 맞지 않아 불필요합니다.
-            textbutton _("조작방법") action ShowMenu("help")
+        #     ## 도움말 메뉴는 모바일 디바이스와 맞지 않아 불필요합니다.
+        #     textbutton _("조작방법") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
@@ -365,11 +366,15 @@ screen main_menu():
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
+            # text "[config.name!t]":
+            text "나의 프위스":
                 style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            text "- 좌충우돌 7일간의 프위스 여행기 -":
+                style "main_menu_text"
+
+            # text "[config.version]":
+            #     style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -593,7 +598,7 @@ screen load():
 
 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("{} 페이지"), auto=_("자동 세이브"), quick=_("퀵세이브"))
+    # default page_name_value = FilePageNameInputValue(pattern=_("{} 페이지"), auto=_("자동 세이브"), quick=_("퀵세이브"))
 
     use game_menu(title):
 
@@ -603,16 +608,22 @@ screen file_slots(title):
             order_reverse True
 
             ## 페이지 제목을 플레이어가 수정할 수 있음.
-            button:
+            # button:
+            #     style "page_label"
+
+            #     key_events True
+            #     xalign 0.5
+            #     action page_name_value.Toggle()
+
+            #     input:
+            #         style "page_label_text"
+            #         value page_name_value
+            vbox:
                 style "page_label"
 
-                key_events True
                 xalign 0.5
-                action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+                text "세이브"
 
             ## 파일 슬롯 그리드.
             grid gui.file_slot_cols gui.file_slot_rows:
@@ -643,40 +654,40 @@ screen file_slots(title):
                         key "save_delete" action FileDelete(slot)
 
             ## 페이지 이동 버튼.
-            vbox:
-                style_prefix "page"
+            # vbox:
+            #     style_prefix "page"
 
-                xalign 0.5
-                yalign 1.0
+            #     xalign 0.5
+            #     yalign 1.0
 
-                hbox:
-                    xalign 0.5
+            #     hbox:
+            #         xalign 0.5
 
-                    spacing gui.page_spacing
+            #         spacing gui.page_spacing
 
-                    textbutton _("<") action FilePagePrevious()
+            #         textbutton _("<") action FilePagePrevious()
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}자동") action FilePage("auto")
+            #         if config.has_autosave:
+            #             textbutton _("{#auto_page}자동") action FilePage("auto")
 
-                    if config.has_quicksave:
-                        textbutton _("{#quick_page}퀵") action FilePage("quick")
+            #         if config.has_quicksave:
+            #             textbutton _("{#quick_page}퀵") action FilePage("quick")
 
-                    ## 범위(1, 10)는 1부터 9까지 숫자를 제공합니다.
-                    for page in range(1, 10):
-                        textbutton "[page]" action FilePage(page)
+            #         ## 범위(1, 10)는 1부터 9까지 숫자를 제공합니다.
+            #         for page in range(1, 10):
+            #             textbutton "[page]" action FilePage(page)
 
-                    textbutton _(">") action FilePageNext()
+            #         textbutton _(">") action FilePageNext()
 
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("동기화 업로드"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("동기화 다운로드"):
-                            action DownloadSync()
-                            xalign 0.5
+            #     if config.has_sync:
+            #         if CurrentScreenName() == "save":
+            #             textbutton _("동기화 업로드"):
+            #                 action UploadSync()
+            #                 xalign 0.5
+            #         else:
+            #             textbutton _("동기화 다운로드"):
+            #                 action DownloadSync()
+            #                 xalign 0.5
 
 
 style page_label is gui_label
@@ -736,12 +747,12 @@ screen preferences():
                         textbutton _("창 화면") action Preference("display", "window")
                         textbutton _("전체 화면") action Preference("display", "fullscreen")
 
-                vbox:
-                    style_prefix "check"
-                    label _("넘기기")
-                    textbutton _("읽지 않은 지문") action Preference("skip", "toggle")
-                    textbutton _("선택지 이후") action Preference("after choices", "toggle")
-                    textbutton _("화면 전환 효과") action InvertSelected(Preference("transitions", "toggle"))
+                # vbox:
+                #     style_prefix "check"
+                #     label _("넘기기")
+                #     textbutton _("읽지 않은 지문") action Preference("skip", "toggle")
+                #     textbutton _("선택지 이후") action Preference("after choices", "toggle")
+                #     textbutton _("화면 전환 효과") action InvertSelected(Preference("transitions", "toggle"))
 
                 ## "radio_pref" 나 "check_pref" 를 추가하여 그 외에도 환경설정
                 ## 항목을 추가할 수 있습니다.
@@ -758,11 +769,11 @@ screen preferences():
 
                     bar value Preference("text speed")
 
-                    label _("자동 진행 시간")
+                    # label _("자동 진행 시간")
 
-                    bar value Preference("auto-forward time")
+                    # bar value Preference("auto-forward time")
 
-                vbox:
+                    null height (2 * gui.pref_spacing)
 
                     if config.has_music:
                         label _("배경음 음량")
@@ -770,32 +781,40 @@ screen preferences():
                         hbox:
                             bar value Preference("music volume")
 
-                    if config.has_sound:
+                # vbox:
 
-                        label _("효과음 음량")
+                #     if config.has_music:
+                #         label _("배경음 음량")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                #         hbox:
+                #             bar value Preference("music volume")
 
-                            if config.sample_sound:
-                                textbutton _("테스트") action Play("sound", config.sample_sound)
+                #     if config.has_sound:
+
+                #         label _("효과음 음량")
+
+                #         hbox:
+                #             bar value Preference("sound volume")
+
+                #             if config.sample_sound:
+                #                 textbutton _("테스트") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("음성 음량")
+                #     if config.has_voice:
+                #         label _("음성 음량")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                #         hbox:
+                #             bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("테스트") action Play("voice", config.sample_voice)
+                #             if config.sample_voice:
+                #                 textbutton _("테스트") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                #     if config.has_music or config.has_sound or config.has_voice:
+                #         null height gui.pref_spacing
 
-                        textbutton _("모두 음소거"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
+                #         textbutton _("모두 음소거"):
+                #             action Preference("all mute", "toggle")
+                #             style "mute_all_button"
 
 
 style pref_label is gui_label
@@ -1509,9 +1528,9 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("되감기") action Rollback()
-            textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("자동진행") action Preference("auto-forward", "toggle")
+            # textbutton _("되감기") action Rollback()
+            # textbutton _("넘기기") action Skip() alternate Skip(fast=True, confirm=True)
+            # textbutton _("자동진행") action Preference("auto-forward", "toggle")
             textbutton _("메뉴") action ShowMenu()
 
 

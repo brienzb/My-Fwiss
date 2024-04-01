@@ -125,6 +125,13 @@ default preferences.text_cps = 0
 default preferences.afm_time = 15
 
 
+## 커스텀 설정값 #####################################################################
+
+define config.has_autosave = False
+define config.has_quicksave = False
+define config.has_sync = False
+
+
 ## 세이브 디렉토리 ####################################################################
 ##
 ## 렌파이는 이 게임에 대한 저장 파일을 플랫폼 별로 배치합니다. 세이브 파일들은
