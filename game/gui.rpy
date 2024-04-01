@@ -25,18 +25,18 @@ define config.check_conflicting_properties = True
 ## 인터페이스에서 글자의 색상입니다.
 
 ## 강조 색상은 레이블(label)과 강조된 글자로 인터페이스 전체에서 사용됩니다.
-define gui.accent_color = '#003366'
+define gui.accent_color = '#000060'  # '#003366'
 
 ## 텍스트 버튼(text button)이 선택(selected)됐거나 커서를 올리지(hovered) 않았을
 ## 때 사용됩니다.
-define gui.idle_color = '#707070'
+define gui.idle_color = '#606060'  # '#707070'
 
 ## 작은(small) 색상은 같은 효과를 내기 위해 더 밝거나 어두워야 하는 작은 글자에
 ## 사용됩니다.
-define gui.idle_small_color = '#606060'
+define gui.idle_small_color = '#404040'  # '#606060'
 
 ## 버튼(button)과 막대(bar)에 커서를 올렸을 때(hovered) 사용됩니다.
-define gui.hover_color = '#003366'
+define gui.hover_color = '#3284d6'  # '#003366'
 
 ## 텍스트 버튼(text button)에 선택됐지만(selected) 포커스되지(focused) 않았을 때
 ## 사용됩니다. 버튼(button)은 현재 화면이거나 설정값인 경우 선택됨(selected)이
@@ -44,15 +44,15 @@ define gui.hover_color = '#003366'
 define gui.selected_color = '#555555'
 
 ## 텍스트 버튼(text button)이 선택되지(selected) 않았을 때 사용됩니다.
-define gui.insensitive_color = '#7070707f'
+define gui.insensitive_color = '#8888887f'  # '#7070707f'
 
 ## 채워지지 않은 빈 막대(bar)에 사용됩니다. 이것은 바로 사용되지 않지만, 막대
 ## (bar) 이미지 파일이 재생성됐을 때 사용됩니다.
-define gui.muted_color = '#6684a3'
-define gui.hover_muted_color = '#99adc1'
+define gui.muted_color = '#6080d0'  # '#6684a3'
+define gui.hover_muted_color = '#8080f0'  # '#99adc1'
 
 ## 대사(dialogue)와 선택지(menu choice)의 글자에서 사용됩니다.
-define gui.text_color = '#404040'
+define gui.text_color = '#402000'  # '#404040'
 define gui.interface_text_color = '#404040'
 
 
@@ -107,30 +107,30 @@ define gui.textbox_yalign = 1.0
 
 ## 말하는 캐릭터의 이름을 텍스트 박스를 기준으로 배치합니다. 이것은 좌측이나 최
 ## 상단으로부터 전체 픽셀값의 숫자가 되거나, 0.5로 중앙이 될 수 있습니다.
-define gui.name_xpos = 360
-define gui.name_ypos = 0
+define gui.name_xpos = 0.5  # 360
+define gui.name_ypos = -22  # 0
 
 ## 캐릭터들의 이름을 수평으로 정렬합니다. 이것은 0.0으로 좌측 정렬, 0.5로 중앙,
 ## 그리고 1.0으로 우측 정렬될 수 있습니다.
-define gui.name_xalign = 0.0
+define gui.name_xalign = 0.5  # 0.0
 
 ## 캐릭터들의 이름이 들어 있는 박스의 너비, 높이, 그리고 테두리입니다. 혹은 그것
 ## 을 None으로 자동 설정할 수 있습니다.
-define gui.namebox_width = None
+define gui.namebox_width = 300  # None
 define gui.namebox_height = None
 
 ## 캐릭터의 이름이 들어 있는 박스의 테두리를 좌측, 상단, 우측, 하단의 순서로 정
 ## 합니다.
-define gui.namebox_borders = Borders(5, 5, 5, 5)
+define gui.namebox_borders = Borders(15, 7, 15, 7)  # Borders(5, 5, 5, 5)
 
 ## 만약 참(True)이면, 네임박스의 배경은 바둑판식으로 배열(tiled)될 것이고, 거짓
 ## (False)이면, 네임박스의 배경은 채워질(scaled) 것입니다.
-define gui.namebox_tile = False
+define gui.namebox_tile =  True  # False
 
 
 ## 텍스트박스에서 대사의 위치입니다. These can be a whole number of pixels
 ## relative to the left or top side of the textbox, or 0.5 to center.
-define gui.dialogue_xpos = 402
+define gui.dialogue_xpos = 0.5  # 402
 define gui.dialogue_ypos = 75
 
 ## 픽셀값에서 대사의 최대 너비입니다.
@@ -138,7 +138,7 @@ define gui.dialogue_width = 1116
 
 ## 대사 글자의 수평 정렬입니다. 이것은 0.0으로 좌측 정렬, 0.5로 중앙, 그리고 1.0
 ## 으로 우측 정렬이 될 수 있습니다.
-define gui.dialogue_text_xalign = 0.0
+define gui.dialogue_text_xalign = 0.5  # 0.0
 
 
 ## 버튼들 #########################################################################
@@ -149,14 +149,14 @@ define gui.dialogue_text_xalign = 0.0
 ## 픽셀값에서 버튼의 너비와 높이입니다. 만약 None이면, 렌파이가 크기를 계산합니
 ## 다.
 define gui.button_width = None
-define gui.button_height = None
+define gui.button_height = 64  # None
 
 ## 좌측, 상단, 우측, 하단의 순서에서 버튼의 테두리 값입니다.
-define gui.button_borders = Borders(6, 6, 6, 6)
+define gui.button_borders = Borders(10, 10, 10, 10)  # Borders(6, 6, 6, 6)
 
 ## 만약 참(True)이면, 배경 이미지는 바둑판식으로 배열(tiled)될 것입니다. 만약 거
 ## 짓(False)이면, 배경 이미지는 선으로 채워질(scaled) 것입니다.
-define gui.button_tile = False
+define gui.button_tile = True  # False
 
 ## 버튼에 사용된 글자의 폰트입니다.
 define gui.button_text_font = gui.interface_text_font
@@ -167,11 +167,15 @@ define gui.button_text_size = gui.interface_text_size
 ## 다양한 상태의 버튼 글자의 색상입니다.
 define gui.button_text_idle_color = gui.idle_color
 define gui.button_text_hover_color = gui.hover_color
-define gui.button_text_selected_color = gui.selected_color
+define gui.button_text_selected_color = gui.accent_color  # gui.selected_color
 define gui.button_text_insensitive_color = gui.insensitive_color
 
 ## 버튼 글자의 수평 정렬(0.0은 왼쪽，0.5은 가운데，1.0은 오른쪽)입니다.
 define gui.button_text_xalign = 0.0
+
+
+## 버튼 이미지 익스텐션
+define gui.button_image_extension = ".png"
 
 
 ## 이러한 변수는 다른 종류의 버튼 설정을 덮어씌웁니다. 사용 가능한 버튼의 종류
@@ -179,9 +183,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## 이러한 사용자 지정은 기본 인터페이스에 사용됩니다:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(40, 10, 10, 10)  # Borders(27, 6, 6, 6)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(40, 10, 10, 10)  # Borders(27, 6, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -196,7 +200,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## 습니다. 예를 들어, 다음 행의 주석 표시를 제거하여 탐색(navigation) 버튼의 너
 ## 비를 설정할 수 있습니다.
 
-# define gui.navigation_button_width = 250
+define gui.navigation_button_width = 290  # 250
 
 
 ## 선택 버튼들 ######################################################################
@@ -210,8 +214,8 @@ define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
-define gui.choice_button_text_idle_color = '#707070'
-define gui.choice_button_text_hover_color = "#ffffff"
+define gui.choice_button_text_idle_color = '#888888'  # '#707070'
+define gui.choice_button_text_hover_color = '#0066cc'  # "#ffffff"
 define gui.choice_button_text_insensitive_color = '#7070707f'
 
 
@@ -281,7 +285,7 @@ define gui.main_menu_text_xalign = 1.0
 ## 요소들을 포함하는 프레임을 제어합니다.
 
 ## 일반 프레임.
-define gui.frame_borders = Borders(6, 6, 6, 6)
+define gui.frame_borders = Borders(15, 15, 15, 15)  # Borders(6, 6, 6, 6)
 
 ## 프레임은 확인(confirm) 화면의 일부로 사용됩니다.
 define gui.confirm_frame_borders = Borders(60, 60, 60, 60)
@@ -293,7 +297,7 @@ define gui.skip_frame_borders = Borders(24, 8, 75, 8)
 define gui.notify_frame_borders = Borders(24, 8, 60, 8)
 
 ## 프레임 배경들은 바둑판식으로 배열해야 할까요?
-define gui.frame_tile = False
+define gui.frame_tile = True  # False
 
 
 ## 막대, 스크롤바, 슬라이더 ##############################################################
@@ -307,13 +311,13 @@ define gui.frame_tile = False
 ## 수평 막대, 스크롤바, 슬라이더의 높이. 수직 막대, 스크롤바, 슬라이더의 너비.
 define gui.bar_size = 38
 define gui.scrollbar_size = 18
-define gui.slider_size = 38
+define gui.slider_size = 64  # 38
 
 ## 막대 이미지가 바둑판식 배열돼야 하면 참(True)입니다. 선으로 채워져야 한다면
 ## 거짓(False)입니다.
 define gui.bar_tile = False
 define gui.scrollbar_tile = False
-define gui.slider_tile = False
+define gui.slider_tile = True  # False
 
 ## 수평 테두리입니다.
 define gui.bar_borders = Borders(6, 6, 6, 6)
