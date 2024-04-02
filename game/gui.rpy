@@ -309,24 +309,24 @@ define gui.frame_tile = True  # False
 ## 가 작성한 화면에서만 사용됩니다.
 
 ## 수평 막대, 스크롤바, 슬라이더의 높이. 수직 막대, 스크롤바, 슬라이더의 너비.
-define gui.bar_size = 38
-define gui.scrollbar_size = 18
+define gui.bar_size = 64  # 38
+define gui.scrollbar_size = 24  # 18
 define gui.slider_size = 64  # 38
 
 ## 막대 이미지가 바둑판식 배열돼야 하면 참(True)입니다. 선으로 채워져야 한다면
 ## 거짓(False)입니다.
-define gui.bar_tile = False
-define gui.scrollbar_tile = False
+define gui.bar_tile = True  # False
+define gui.scrollbar_tile = True  # False
 define gui.slider_tile = True  # False
 
 ## 수평 테두리입니다.
-define gui.bar_borders = Borders(6, 6, 6, 6)
-define gui.scrollbar_borders = Borders(6, 6, 6, 6)
+define gui.bar_borders = Borders(10, 10, 10, 10)  # Borders(6, 6, 6, 6)
+define gui.scrollbar_borders = Borders(10, 6, 10, 6)  # Borders(6, 6, 6, 6)
 define gui.slider_borders = Borders(6, 6, 6, 6)
 
 ## 수직 테두리입니다.
-define gui.vbar_borders = Borders(6, 6, 6, 6)
-define gui.vscrollbar_borders = Borders(6, 6, 6, 6)
+define gui.vbar_borders = Borders(10, 10, 10, 10)  # Borders(6, 6, 6, 6)
+define gui.vscrollbar_borders = Borders(6, 10, 6, 10)  # Borders(6, 6, 6, 6)
 define gui.vslider_borders = Borders(6, 6, 6, 6)
 
 ## GUI에서 스크롤할 수 없는 스크롤 막대로 뭘 할 수 있나요? "hide"로 그것들을 숨
@@ -349,16 +349,16 @@ define gui.history_height = 210
 define gui.history_spacing = 0
 
 ## 말하는 캐릭터의 이름을 나타내는 레이블의 위치, 너비, 그리고 정렬입니다.
-define gui.history_name_xpos = 233
+define gui.history_name_xpos = 0.5  # 233
 define gui.history_name_ypos = 0
-define gui.history_name_width = 233
-define gui.history_name_xalign = 1.0
+define gui.history_name_width = 225  # 233
+define gui.history_name_xalign = 0.5  # 1.0
 
 ## 대사 글자의 위치, 너비, 그리고 정렬입니다.
 define gui.history_text_xpos = 255
-define gui.history_text_ypos = 3
+define gui.history_text_ypos = 60  # 3
 define gui.history_text_width = 1110
-define gui.history_text_xalign = 0.0
+define gui.history_text_xalign = 0.5  # 0.0
 
 
 ## NVL-모드 ######################################################################
@@ -381,27 +381,27 @@ define gui.nvl_height = 173
 define gui.nvl_spacing = 15
 
 ## 말하는 캐릭터의 이름을 나타내는 레이블의 위치, 너비, 그리고 정렬입니다.
-define gui.nvl_name_xpos = 645
+define gui.nvl_name_xpos = 0.5  # 645
 define gui.nvl_name_ypos = 0
-define gui.nvl_name_width = 225
-define gui.nvl_name_xalign = 1.0
+define gui.nvl_name_width = 740  # 225
+define gui.nvl_name_xalign = 0.5  # 1.0
 
 ## 대사 글자의 위치, 너비, 그리고 정렬입니다.
-define gui.nvl_text_xpos = 675
-define gui.nvl_text_ypos = 12
-define gui.nvl_text_width = 885
-define gui.nvl_text_xalign = 0.0
+define gui.nvl_text_xpos = 0.5  # 675
+define gui.nvl_text_ypos = 60  # 12
+define gui.nvl_text_width = 740  # 885
+define gui.nvl_text_xalign = 0.5  # 0.0
 
 ## nvl_thought 글자의 위치, 너비, 정렬(nvl_narrator 캐릭터에 의해 표시되는 글자)
 ## 입니다.
-define gui.nvl_thought_xpos = 360
+define gui.nvl_thought_xpos = 0.5  # 360
 define gui.nvl_thought_ypos = 0
-define gui.nvl_thought_width = 1170
-define gui.nvl_thought_xalign = 0.0
+define gui.nvl_thought_width = 740  # 1170
+define gui.nvl_thought_xalign = 0.5  # 0.0
 
 ## NVL 메뉴 버튼의 위치입니다.
-define gui.nvl_button_xpos = 675
-define gui.nvl_button_xalign = 0.0
+define gui.nvl_button_xpos = 0.5  # 675
+define gui.nvl_button_xalign = 0.5  # 0.0
 
 
 ## 현지화 #########################################################################
