@@ -744,8 +744,19 @@ screen preferences():
                     vbox:
                         style_prefix "radio"
                         label _("화면 모드")
-                        textbutton _("창 화면") action Preference("display", "window")
-                        textbutton _("전체 화면") action Preference("display", "fullscreen")
+
+                        button:
+                            xsize 300
+                            text "창 화면"
+                            action Preference("display", "window")
+                        
+                        button:
+                            xsize 300
+                            text "전체 화면"
+                            action Preference("display", "fullscreen")
+
+                        # textbutton _("창 화면") action Preference("display", "window")
+                        # textbutton _("전체 화면") action Preference("display", "fullscreen")
 
                 # vbox:
                 #     style_prefix "check"
