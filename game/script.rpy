@@ -4,7 +4,7 @@
 # image eileen happy = "eileen_happy.png"
 
 # 게임에서 사용할 캐릭터를 정의합니다.
-define e = Character('아이린', color="#c8ffc8")
+define e = Character("유나은", color="#104010")
 
 
 # 여기에서부터 게임이 시작합니다.

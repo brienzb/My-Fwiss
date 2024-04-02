@@ -370,7 +370,7 @@ screen main_menu():
             text "나의 프위스":
                 style "main_menu_title"
 
-            text "- 좌충우돌 7일간의 프위스 여행기 -":
+            text "- 좌충우돌 7일간의 프위스 여행 일기 -":
                 style "main_menu_text"
 
             # text "[config.version]":
