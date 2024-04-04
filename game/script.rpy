@@ -8,7 +8,20 @@ define ne = Character("유나은", color="#f7b1cb")
 define so = Character("???", color="#214bac")
 define bb = Character("브리엔츠 보이", color="#214bac")
 
+define na = Character(None)
 define narrator = Character(None, kind=nvl)
+
+
+init -999:
+    $ main_point = 3
+    $ sub_point = 1
+    $ minus_point = -1
+
+    $ healthy = 0  # 건강
+    $ happy = 0    # 행복
+    $ funny = 0    # 재미
+    $ money = 0    # 금전
+
 
 # 여기에서부터 게임이 시작합니다.
 label start:
@@ -20,14 +33,38 @@ label start:
     "그렇게 몇일을 보내던 어느 날"
     "누군가에게 인스타 DM이 하나 왔는데.."
 
-    so "(인스타 디엠 받는 이미지) 당신을 프위스로 초대합니다!"
+    
+    so "(인스타 디엠 받는 이미지) 당신을 프위스로 초대합니다!" with fade
 
     ne "엥? 누구지..?"
     ne "누가 보낸건진 모르겠지만.."
-    ne "(화면 흔들거리는 모션) 프위스?!?!"
+    ne "프위스?!?!" with vpunch
     ne "대박이잖아~!~!"
     ne "금방이라도 가고 싶은걸~? ㅎㅎ"
-    ne "언제 출발인거지?? 어여 짐도 싸고 준비도 하고,, 가족들이랑 친구들한테도 말해두어야 하고,, 아 맞다! 회사도 휴가 써야하는데,,\n..."
+    ne "언제 출발인거지??"
+    ne "헉..! 당장 다음주잖아!! ㅎㅁㅎ" with hpunch
+    ne "어여 짐도 싸고 준비도 하고,, 가족들이랑 친구들한테도 말해두어야 하고,, 아 맞다! 회사도 휴가 써야하는데,,\n..."
+    ne "이럴 때가 아니지! 일단 뭐라도 해보자!!"
+    
+    menu:
+        "금강산도 식후경! 일단은 밥이라도 먹으며 흥분을 가라앉히자":
+            $ healthy += main_point
+            ne "역시 밥을 먹으니 진정이되네 ㅎㅎ"
+        "짐부터 챙겨둘까? 프위스 가서 뭐 입지~? 흐흐":
+            $ happy += main_point
+            ne "하루에 2벌씩 갈아 입어야 하니 가득가득! ^^"
+        "우선? 가족들이랑 친구들한테 자랑해야지~!~! ㅋㅋㅋ":
+            $ funny += main_point
+            ne "엄마~~~ 나 프위스 간다~~~"
+        "비행기표랑 숙소는 제공해준다고 했으니, 여행 경비 준비랑 환전좀 해야하나?":
+            $ money += main_point
+            ne "이정도만 바꿔두면 되겠다! 다행히 돈은 충분한 것 같네"
+    
+    na "(이것저것 준비를 마친뒤)" with fade
+    ne "오케이~ 좋았어!!"
+    ne "벌써부터 여행이 기다려지는군 ㅎ"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+
 
     nvl clear
     "유나은은 그렇게 들뜬 마음으로 DM을 보며 여행갈 상상에 빠진다"

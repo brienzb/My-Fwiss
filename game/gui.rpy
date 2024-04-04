@@ -59,13 +59,13 @@ define gui.interface_text_color = '#404040'
 ## 글자와 글자 크기 ###################################################################
 
 ## 인-게임 글자에 사용됩니다.
-define gui.text_font = "BinggraeSamanco-Bold.ttf"
+define gui.text_font = "font/BinggraeSamanco-Bold.ttf"
 
 ## 캐릭터의 이름에 사용됩니다.
-define gui.name_text_font = "BinggraeSamanco-Bold.ttf"
+define gui.name_text_font = "font/BinggraeSamanco-Bold.ttf"
 
 ## 인터페이스에 사용됩니다.
-define gui.interface_text_font = "BinggraeSamanco-Bold.ttf"
+define gui.interface_text_font = "font/BinggraeSamanco-Bold.ttf"
 
 ## 일반 대사의 글자 크기입니다.
 define gui.text_size = 33
@@ -215,7 +215,7 @@ define gui.choice_button_text_font = gui.text_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#888888'  # '#707070'
-define gui.choice_button_text_hover_color = '#0066cc'  # "#ffffff"
+define gui.choice_button_text_hover_color = '#000060'  # "#ffffff"
 define gui.choice_button_text_insensitive_color = '#7070707f'
 
 
