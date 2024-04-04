@@ -137,3 +137,7 @@ CubismSdkForNative-4-*.zip
 
 # Custom gitignore
 /asset
+
+# Web build
+progressive_download.txt
+project.json
