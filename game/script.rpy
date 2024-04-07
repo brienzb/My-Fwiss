@@ -15,6 +15,7 @@ define narrator = Character(None, kind=nvl)
 init -999:
     $ main_point = 3
     $ sub_point = 1
+    $ minus_point = -1
 
     $ healthy = 0  # 건강
     $ happy = 0    # 행복
@@ -137,5 +138,40 @@ label start:
     "어쩌구 저쩌구"
     "..."
     "그렇게 유나은은 무사 착륙하고 프위스 공항에 도착했다!"
+
+    # image: 프위스(프랑스 or 스위스) 공항 사진
+    ne "키야~~ 프위스 공기" with fade
+    ne "후- 하~"
+    ne "너무 좋다!! 꺄륵"
+    ne "이럴때가 아니지!! 어서 숙소가서 짐 두고 본격적으로 여행을 즐겨보자!"
+    ne "어디보자 숙소까지는..!!"
+
+    menu:
+        "편안하게 택시 ㅎㅎ":
+            $ healthy += main_point
+            $ money += minus_point
+            ne "돈은 좀 나가지만,, 그래도 편하게 가야 첫날부터 화이팅 할 수 있지 ㅎ"
+        "제일 저렴한 버스 가즈아~":
+            $ money += main_point
+            $ happy += minus_point
+            ne "먹을거랑 액티비티할게 많은데 가성비 있게 버스도 좋지~"
+        "타지에 왔으니 지하철도 한번 타볼까~?":
+            $ funny += main_point
+            $ healthy += minus_point
+            ne "한국과는 다른 쾌쾌한 느낌.. 하지만 이것마저 운치로구나"
+        "숙소를 가는 길부터 여행의 시작! 기차타고 숑숑":
+            $ happy += main_point
+            $ funny += minus_point
+            ne "도시라 너무 슉슉 지나가지만! 얼른 짐두고 여행을 즐겨야징~~"
+
+    na "(어찌어찌 잘 이동해서 숙소에 도착한 유나은)" with fade
+    # image: 숙소 사진
+    ne "나이스~~ 드뎌 도착!!!" with vpunch
+    ne "이라고 했지만,, 벌써 시간이 저녁 6시네 ㅠㅠ"
+    ne "뭐 사실 첫째날은 어느정도 예상한 것이니 다음날에 더 활기차게 놀아보자~!"
+    ne "그렇다고 오늘을 그대로 버리긴 아까운데.."
+    ne "마침 이 호텔이 프위스의 명물 둥동탑 근처였지??"
+    ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
 
     return
