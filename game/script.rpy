@@ -68,7 +68,7 @@ label start:
     na "(이것저것 준비를 마친뒤)" with fade
     ne "오케이~ 좋았어!!"
     ne "벌써부터 여행이 기다려지는군 ㅎ"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 들뜬 마음으로 DM을 보며 여행갈 상상에 빠진다"
@@ -100,7 +100,7 @@ label start:
     
     ne "휴 다행이다~ 바로 앞 게이트였구나 ㅎㅎ"
     ne "늦기 전에 얼른 들어가쟝~~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     # image: 비행기 내부 안 사잔
     na "(비행기 좌석에 탑승한 뒤)" with fade
@@ -133,7 +133,7 @@ label start:
     ne "엥?? 착륙까지 벌써 1시간 밖에 안남았네!!!" with hpunch
     ne "나.. 도대체 얼마나 잔걸까..?? 🤔"
     ne "암튼 곧 도착이니! 얼른 내릴 준비를 하자!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "아- 아- 레이디스 앤 젠틀맨 디스 이즈 캡틴 스피킹"
@@ -174,7 +174,7 @@ label start:
     ne "그렇다고 오늘을 그대로 버리긴 아까운데.."
     ne "마침 이 호텔이 프위스의 명물 <둥동탑> 근처였지??"
     ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     # image: 에펠탑 야경 사진, music: 스텔라장 - L’Amour, Les Baguettes, Paris
     ne "우와 대박!!" with fade
@@ -245,7 +245,7 @@ label start:
     ne "와-앙~"
     ne "!!! 너무 맛있어 ㅠㅠ" with hpunch
     ne "역시 프위스라 그런지 이 분위기에 취해 빵도 맛있구나~~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
     
     # image: 유럽 프랑스 다리 or 거리
     na "(빵을 다 먹고 난 뒤)" with fade
@@ -282,7 +282,7 @@ label start:
 
     ne "역시 이 그림이 최고야~!~!"
     ne "묘하게 빠져든다 흐흐흐.."
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "한동안 넋을 놓고 그림을 구경하던 유나은은"
@@ -318,7 +318,7 @@ label start:
 
     # image: 식당 앞 or 길거리
     ne "꺼-억 잘먹었다~ ㅎ" with fade
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
     ne "어디보자 이제 시간이 한 두세시가 넘었네"
     ne "그렇다면 그 다음에 갈 곳은 바로~~"
     ne "프위스 유명 백화점 <갤럭시아>" with vpunch
@@ -366,7 +366,7 @@ label start:
     ne "하하.. 이게 왠걸 이 타이밍에 기가막히게 배에서 밥 달라고 하네"
     ne "그래! 이제 슬슬 해도 지는 것 같고~"
     ne "어서 미리 예약해둔 재즈바로 가자!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     # image: 재즈바
     na "(재즈바로 이동한 유나은)" with fade
@@ -400,7 +400,7 @@ label start:
             ne "진짜 틀어주네?!?! ㅋㅋㅋ"
             ne "으어어어ㅓ 국뽕이 차오른드아아ㅏㅏㅏ.."
 
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 재즈바에 취해간다"
@@ -410,8 +410,6 @@ label start:
 
 
     ## Day 3 ##
-    # 오전: 안시 호수공원 (오리배)
-    # 오후: 샤모니 산 등산
 
     $ renpy.notify("프위스 여행 3일차")
     
@@ -459,13 +457,54 @@ label start:
     ne "헐 대박!!" with vpunch
     ne "진짜로 내가 기대하던 [choice_word] 풍경이 나타났잖아!!!"
     ne "너무 낭만있고 너무 좋다.."
-    ne "한폭의 그림같은 이 순간 ㅎㅎ 행복 그잡채"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money])"
+    ne "한 폭의 그림같은 이 순간 ㅎㅎ 행복 그잡채"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 창밖 풍경을 보며 기차 여행의 설렘을 즐기다가"
     "아름다운 풍경에 정신을 빼앗기며 스르르 잠에 들었다"
     "얼마만큼의 시간이 지났을까 유나은은 금새 목적지에 도착하게 되었다"
+
+    # image: 안시 소도시 (구시가지) 사진
+    ne "여기가 안모니인건가? ㅎㅎ" with fade
+    ne "역시 어제 있었던 프위스 수도인 파른과는 또 다른 느낌이군"
+    ne "후~~~ 하~~~~"
+    ne "이 상쾌한 공기!"
+    ne "너무나 평온하다 ^^"
+    ne "엇 아닛!!" with vpunch
+    ne "저기는 호수인가..!! ㅎㅁㅎ"
+    # image: 안시 호수 및 공원 사진
+    ne "헐 대박!!!"
+    ne "너무 이쁘다.. ㅠㅠ"
+    ne "저기 패들보트도 있는 것 같은데 저거나 타면서 호수 구경 제대로 해볼까~?"
+
+    nvl clear
+    menu:
+        "보트타고 호수 위에서 둥둥 떠다니자!!":
+            $ happy += main_point
+            $ funny += main_point
+            $ hidden += sub_point
+            "유나은은 보트를 다고 호수를 유유자적 거닐었다"
+        "흐흐 짐도 있는데 귀찮으니까 호수 공원 벤치에서 나른하게 쉬자":
+            $ healthy += main_point
+            $ money += main_point
+            "유나은은 근처 벤치에 앉아 주변을 구경했다"
+    
+    "기차때부터 이어진 한 폭의 그림같은 순간들이 계속 이어진다"
+    "나른한 햇살 아래 유나은은 잠시 휴식을 취하며 힐링을 한다"
+    "..."
+    "그렇게 몇분이 지나고 유나은은 꿀맛같은 휴식을 마친뒤"
+    "발걸음을 옮기기 시작했다"
+
+    ne "후하~ 잘 즐겼다 ㅎㅎ" with fade
+    ne "이제 어서 짐을 숙소에 두고 오후 일정을 하러 가보자!!"
+    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
+
+    nvl clear
+    "유나은은 숙소에 짐을 두고 컵라면으로 끼니를 떼운 뒤"
+    "안모니의 대표적인 설산인 동블랑을 등반하기 위해"
+    "케이블카가 있는 곳으로 향했다"
+
 
 
     ## Day 4 ##
