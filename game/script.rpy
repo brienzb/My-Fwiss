@@ -18,9 +18,9 @@ init -999:
     $ sub_point = 1
     $ minus_point = -1
 
-    $ healthy = 0  # 건강
     $ happy = 0    # 행복
     $ funny = 0    # 재미
+    $ healthy = 0  # 건강
     $ money = 0    # 금전
     $ hidden = 0   # 히든 포인트 (특정 점수 이상이면 히든 엔딩)
 
@@ -69,8 +69,7 @@ label start:
     na "(이것저것 준비를 마친뒤)" with fade
     ne "오케이~ 좋았어!!"
     ne "벌써부터 여행이 기다려지는군 ㅎ"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
-
+    
     nvl clear
     "유나은은 그렇게 들뜬 마음으로 DM을 보며 여행갈 상상에 빠진다"
     "그렇게 몇일이 지나 드디어 다가온 여행 당일!"
@@ -101,8 +100,7 @@ label start:
     
     ne "휴 다행이다~ 바로 앞 게이트였구나 ㅎㅎ"
     ne "늦기 전에 얼른 들어가쟝~~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
-
+    
     # image: 비행기 내부 안 사잔
     na "(비행기 좌석에 탑승한 뒤)" with fade
     ne "읏차~! 좌석 탑승 완료!!"
@@ -134,7 +132,6 @@ label start:
     ne "엥?? 착륙까지 벌써 1시간 밖에 안남았네!!!" with hpunch
     ne "나.. 도대체 얼마나 잔걸까..?? 🤔"
     ne "암튼 곧 도착이니! 얼른 내릴 준비를 하자!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "아- 아- 레이디스 앤 젠틀맨 디스 이즈 캡틴 스피킹"
@@ -175,7 +172,6 @@ label start:
     ne "그렇다고 오늘을 그대로 버리긴 아까운데.."
     ne "마침 이 호텔이 프위스의 명물 <둥동탑> 근처였지??"
     ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     # image: 에펠탑 야경 사진, music: 스텔라장 - L’Amour, Les Baguettes, Paris
     ne "우와 대박!!" with fade
@@ -246,8 +242,7 @@ label start:
     ne "와-앙~"
     ne "!!! 너무 맛있어 ㅠㅠ" with hpunch
     ne "역시 프위스라 그런지 이 분위기에 취해 빵도 맛있구나~~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
-    
+
     # image: 유럽 프랑스 다리 or 거리
     na "(빵을 다 먹고 난 뒤)" with fade
     ne "아~~ 잘 먹었다~~ ^^"
@@ -283,7 +278,6 @@ label start:
 
     ne "역시 이 그림이 최고야~!~!"
     ne "묘하게 빠져든다 흐흐흐.."
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "한동안 넋을 놓고 그림을 구경하던 유나은은"
@@ -319,7 +313,6 @@ label start:
 
     # image: 식당 앞 or 길거리
     ne "꺼-억 잘먹었다~ ㅎ" with fade
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
     ne "어디보자 이제 시간이 한 두세시가 넘었네"
     ne "그렇다면 그 다음에 갈 곳은 바로~~"
     ne "프위스 유명 백화점 <갤럭시아>" with vpunch
@@ -367,7 +360,6 @@ label start:
     ne "하하.. 이게 왠걸 이 타이밍에 기가막히게 배에서 밥 달라고 하네"
     ne "그래! 이제 슬슬 해도 지는 것 같고~"
     ne "어서 미리 예약해둔 재즈바로 가자!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     # image: 재즈바
     na "(재즈바로 이동한 유나은)" with fade
@@ -400,8 +392,6 @@ label start:
             $ funny += main_point
             ne "진짜 틀어주네?!?! ㅋㅋㅋ"
             ne "으어어어ㅓ 국뽕이 차오른드아아ㅏㅏㅏ.."
-
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 재즈바에 취해간다"
@@ -459,7 +449,6 @@ label start:
     ne "진짜로 내가 기대하던 [choice_word] 풍경이 나타났잖아!!!"
     ne "너무 낭만있고 너무 좋다.."
     ne "한 폭의 그림같은 이 순간 ㅎㅎ 행복 그잡채"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 창밖 풍경을 보며 기차 여행의 설렘을 즐기다가"
@@ -499,7 +488,6 @@ label start:
 
     ne "후하~ 잘 즐겼다 ㅎㅎ" with fade
     ne "이제 어서 짐을 숙소에 두고 오후 일정을 하러 가보자!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 숙소에 짐을 두고 컵라면으로 끼니를 떼운 뒤"
@@ -542,7 +530,6 @@ label start:
     ne "그래도 이 설산은.. 한국가면 또 생각날거 같아"
     ne "너무나 아름다운 이 풍경"
     ne "눈으로라도 잔뜩 담아두고 오자!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "그렇게 몇분을 더 구경하던 유나은은"
@@ -624,7 +611,6 @@ label start:
     ne "지금은 과일에 신경쓸 시간이 아니라 바깥 풍경을 볼 시간이야!!"
     ne "이 아름다운 윤슬을 보며~!~!"
     ne "힘차게 출발~~~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 두둥실 떠가는 유람선 위에서"
@@ -664,8 +650,6 @@ label start:
             $ happy += main_point
             ne "헤헤 보기만 해도 흐뭇해지는 고양이네 ㅎㅎ"
             ne "나도 어여 샬레 들어가서 늘어지게 누워있어야지 흐흐"
-    
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 뜻밖의 동물 친구(?)와도 조우하며"
@@ -699,7 +683,6 @@ label start:
             $ money += main_point
 
     ne "오케이! 여기로 정했으!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "라고 했으나 사실 아무일도 일어나지 않았고"
@@ -748,7 +731,6 @@ label start:
     ne "아무렴 어때~ 나만 좋으면 됐지머 ㅎㅎ"
     ne "엇.. 근데 저녁이라 그런지 약간 으슬으슬 춥네잉\n(어디선가 한몸처럼 착붙이라는 말이 들리는거 같기도?)"
     ne "어서 빨리 들어가서 하루 마무리하고 자야겠다~"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 샬레에 들어와 씻고 침대에 누웠다"
@@ -820,8 +802,6 @@ label start:
             bb "아마 다음 멘트는 셋 중 무언갈 산 뒤의 멘트로 이어질겁니다 ^^"
             bb "그럼 다시 게임으로 숑~"
 
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
-
     nvl clear
     "프리데이 본점에서 너무나도 맘에 쏙드는 가방을 구입했다는 사실이"
     "유나은을 더할나위 없이 행복하게 만들었다"
@@ -868,7 +848,6 @@ label start:
     ne "후아!!" with fade
     ne "벌써 저녁이 다 되어버렸네..! ㅎㅁㅎ"
     ne "진예야! 같이 저녁 먹고 가자! ㅎㅎ"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     na "(근처 식당에 도착한 유나은과 진예)" with fade
     ne "우와 여기 식당 너무 근사하다~"
@@ -887,7 +866,6 @@ label start:
 
     ne "오케이!! 가즈아~~"
     ne "(주문하기 위해 웨이터에게 열심히 눈빛으로 싸인을 보내는 중)"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 그렇게 맛있는 음식들과"
@@ -913,7 +891,6 @@ label start:
 
 
     ## Day 6 ##
-    # 비행기 타러 출발 -> 비행기에서 잠을 자는데..
 
     $ renpy.notify("프위스 여행 6일차 (마지막 날)")
     
@@ -966,15 +943,130 @@ label start:
     ne "여행의 시작은 둥동탑.. 그 끝은 둥동산이라니.."
     ne "이런 완벽 그잡채 여행이 또 어딨겠어~~"
     ne "무튼,, 지금은 배고프니 어서 싸온 도시락을 먹어보자 ㅎㅎ"
+    
+    nvl clear
+    "유나은은 돗자리를 핀 뒤, 자신이 싸온 도시락을 한입 먹고"
+    "'내가 이렇게 요리를 잘했나?' 생각하며 놀랐다 ㅎ"
+    "산 정상에서 먹는 도시락과 맥주 한 잔의 여유는"
+    "여행하며 쌓인 약간의 피로마저 모두 풀어줬다"
+    "곧 있으면 다시 비행기를 타고 한국으로 돌아간다는게"
+    "아쉬웠지만 우선은 그런 생각은 잠시 접어두고"
+    "달콤한 낮잠을 청했다"
+
+    na "(낮잠을 자고 일어난 유나은)" with fade
+    ne "흠냐~ 음 잘잤다~ ㅎㅎ"
+    ne "이제 진짜 마지막이구나 ㅠㅠ"
+    ne "안녕 나의 프위스.."
+    ne "여행이 이렇게 끝나다니 너무 아쉽지만,,"
+    ne "이 언니가 반드시 또 올께!!"
+    ne "자! 그럼 다짐도 했겠다!!"
+    ne "이제 내려가서 공항에 가자!"
+
+    nvl clear
+    "유나은은 둥동산에서 내려와"
+    "숙소에서 짐을 빼고 공항으로 향했다"
+    "공항에 가는 길이 마냥 즐겁지만은 않았지만"
+    "마지막 순간까지 행복한 기억들만 담고자"
+    "유나은은 기쁜 마음으로 공항에 갔다"
+    "그렇게 비행기까지 탑승을 마쳤는데.."
+
+    # image: 비행기 안 사진
+    na "(비행기 좌석에 앉은 유나은)" with fade
+    ne "읏차! 이제 진짜 한국으로 가는구나"
+    ne "시원섭섭하지만.. 프위스에서 좋은 기운 잔뜩 받아왔으니"
+    ne "한국에 가서도 좋은 일들만 가득할거야!! ><"
+    ne "자 그러면 이제 슬쩍 눈을 감아볼까~ ㅎㅎ"
+    ne "누가 너무 건조해서 잠이 안온다고 해놓고 8시간 잤다고도 했는데"
+    ne "나도 자고 일어나면 금방 도착하겠지? ㅋㅋ"
+    ne "라고 하기전에?!"
+    ne "기내식은 먹어야징~~"
+    ne "마침 딱 기내식을 주고 있네~?"
+    ne "음~ 나는 뭘 먹을까?"
+
+    menu:
+        "고민할게 뭐 있어! 아시아나 쌈밥 가즈아~~":
+            $ happy += main_point
+            $ funny += main_point
+            $ healthy += main_point
+            $ money += main_point
+            $ hidden += sub_point
+    
+    ne "물론 여행와서 한식도 많이 만들어 먹었지만..!"
+    ne "그래도 역시 헤헤.. 아시아나 쌈밥! 너무 그리웠어!!"
     ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
+
+    nvl clear
+    "유나은은 배부르게 밥을 먹은 뒤"
+    "본격적으로 안대와 목베게를 하며 취침에 들어갔다"
+    "눈을 감으면서 이번 여행이 어땠는지 다시 생각해보며"
+    "스르륵 잠에 들었다"
 
 
     ## Ending ##
-    # 자고 일어나니 꿈
-    # 1-1. 행복: 이렇게 행복한 꿈이라니.. 오늘 하루는 뭔가 기분 좋은 일이 일어날 것만 같아~ (진짜 프위스 여행권 DM 받음)
-    # 1-2. 재미: 꿈에서 너무 재밌었어!! 그래!! 이 재미를 또 한번 찾고자 진짜 여행을 떠나보자!! (마침 친구에게 당첨된 여행권이 있다며 연락이 오는데)
-    # 1-3. 건강: 좋은 꿈을 꾸니까 몸도 마음도 건강해진 기분이야!! 엇 근데 나 이렇게 날씬했나..? (몸무게 46키로 됨)
-    # 1-4. 금전: 이건 거의 준돼지꿈이야..!! 아참 지난번에 산 복권 어떻게 됐지?! (당첨)
-    # 2. 진엔딩: 눈을 떠보니 10월 스위스 샬레에서의 아침.. 아직 우리의 유럽 여행은 끝나지 않았다..!!!
 
+    # image: 검은색 배경 (그냥 사진 X)
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
+
+    # 히든 엔딩 조건
+    if hidden == 10:
+        jump hidden_ending
+
+    # 행복, 재미, 건강, 금전 엔딩 조건 (순서대로 우선순위 조건)
+    $ ending_type = "HAPPY"
+    $ ending_value = happy
+
+    if funny > ending_value:
+        $ ending_type = "FUNNY"
+        $ ending_value = funny
+
+    if healthy > ending_value:
+        $ ending_type = "HEALTHY"
+        $ ending_value = healthy
+
+    if money > ending_value:
+        $ ending_type = "MONEY"
+        $ ending_value = money
+    
+    if ending_type == "HAPPY":
+        jump happy_ending
+    elif ending_type == "FUNNY":
+        jump funny_ending
+    elif ending_type == "HEALTHY":
+        jump healthy_ending
+    else:
+        jump money_ending
+
+    return
+
+
+label happy_ending:
+    # 행복: 이렇게 행복한 꿈이라니.. 오늘 하루는 뭔가 기분 좋은 일이 일어날 것만 같아~ (진짜 프위스 여행권 DM 받음)
+    na "해피엔딩!"
+    return
+
+
+label funny_ending:
+    # 재미: 꿈에서 너무 재밌었어!! 그래!! 이 재미를 또 한번 찾고자 진짜 여행을 떠나보자!! (마침 친구에게 당첨된 여행권이 있다며 연락이 오는데)
+    na "재미엔딩!"
+    return
+
+
+label healthy_ending:
+    # 건강: 좋은 꿈을 꾸니까 몸도 마음도 건강해진 기분이야!! 엇 근데 나 이렇게 날씬했나..? (몸무게 46키로 됨)
+    na "건강엔딩!"
+    return
+
+
+label money_ending:
+    # 금전: 이건 거의 준돼지꿈이야..!! 아참 지난번에 산 복권 어떻게 됐지?! (당첨)
+    na "금전엔딩!"
+    return
+
+
+label hidden_ending:
+    # 진엔딩: 눈을 떠보니 10월 스위스 샬레에서의 아침.. 아직 우리의 유럽 여행은 끝나지 않았다..!!!
+    na "히든엔딩!"
     return
