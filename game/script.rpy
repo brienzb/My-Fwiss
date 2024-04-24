@@ -6,8 +6,8 @@
 # 게임에서 사용할 캐릭터를 정의합니다.)
 define ne = Character("유나은", color="#f7b1cb")
 define so = Character("???", color="#214bac")
-define bb = Character("동해", color="#214bac")
-define bb = Character("진예", color="#dca236")
+define dh = Character("동해", color="#214bac")
+define jy = Character("진예", color="#dca236")
 
 define na = Character(None)
 define narrator = Character(None, kind=nvl)
@@ -40,7 +40,7 @@ label start:
     "누군가에게 인스타 DM이 하나 왔는데.."
 
     # image: 라인 회사 배경
-    so "(인스타 디엠 받는 이미지) 당신을 프위스로 초대합니다!" with fade 
+    so "(인스타 DM) 당신을 프위스로 초대합니다!" with fade 
 
     ne "엥? 누구지..?"
     ne "누가 보낸건진 모르겠지만.."
@@ -793,14 +793,14 @@ label start:
             ne "오케이 너로 정했어~~~~"
         "이중엔 마음에 드는게 없어.. 이번 여행에선 꾹 참자..":
             $ money += main_point
-            bb "큼큼.."
-            bb "갑자기 튀어나와서 많이 당황하셨죠? ㅎ"
-            bb "개발자인 저도 이걸 플레이하시는 분이 이 선택지를 고를지 몰랐네요"
-            bb "요 선택지는 당연 선택 안할 줄 알아서 개발을 안해놨답니다~"
-            bb "뭐가 그리 당당하냐고요?"
-            bb "이스터에그라고 생각해주세요 ><"
-            bb "아마 다음 멘트는 셋 중 무언갈 산 뒤의 멘트로 이어질겁니다 ^^"
-            bb "그럼 다시 게임으로 숑~"
+            dh "큼큼.."
+            dh "갑자기 튀어나와서 많이 당황하셨죠? ㅎ"
+            dh "개발자인 저도 이걸 플레이하시는 분이 이 선택지를 고를지 몰랐네요"
+            dh "요 선택지는 당연 선택 안할 줄 알아서 개발을 안해놨답니다~"
+            dh "뭐가 그리 당당하냐고요?"
+            dh "이스터에그라고 생각해주세요 ><"
+            dh "아마 다음 멘트는 셋 중 무언갈 산 뒤의 멘트로 이어질겁니다 ^^"
+            dh "그럼 다시 게임으로 숑~"
 
     nvl clear
     "프리데이 본점에서 너무나도 맘에 쏙드는 가방을 구입했다는 사실이"
@@ -1044,7 +1044,27 @@ label start:
 
 label happy_ending:
     # 행복: 이렇게 행복한 꿈이라니.. 오늘 하루는 뭔가 기분 좋은 일이 일어날 것만 같아~ (진짜 프위스 여행권 DM 받음)
-    na "해피엔딩!"
+    # na "해피엔딩!"
+
+    # image: 집 (방 안 침대가 보이는 배경) 사진
+    ne "우리 집이잖아~?~?" with vpunch
+    ne "뭐야.. 그러면 내가 지금까지 겪은 모든 건 전부다 꿈이였던건가..??"
+    ne "헉.. 몬가 아쉽지만 ㅠㅠ"
+    ne "이렇게 행복한 꿈이라니..!! 찡-"
+    ne "오늘 하루는 몬가 기분 좋은 일이 일어날 것만 같아~~"
+
+    so "(지잉- 지징-)"
+    ne "엇 이 핸드폰 진동소리는 뭐지?"
+    ne "DM이 왔네?"
+    so "(인스타 DM) 당신을 프위스로 초대합니다!" 
+    ne "에엥!!!!! 이건 진짜겠지??" with vpunch
+    ne "지금은 꿈이 아니겠지??"
+    ne "(볼을 꼬집으며) 아야!!"
+    ne "우와 대박!!! 그러면 이건 진짜 프위스 여행권이자나~~~"
+    ne "그럼 꿈이 아닌 진짜 프위스로..!! 떠나보자!!"
+
+    jump end_credits
+
     return
 
 
@@ -1069,4 +1089,11 @@ label money_ending:
 label hidden_ending:
     # 진엔딩: 눈을 떠보니 10월 스위스 샬레에서의 아침.. 아직 우리의 유럽 여행은 끝나지 않았다..!!!
     na "히든엔딩!"
+    return
+
+
+label end_credits:
+    nvl clear
+    "\n\n\n - 끝 - \n\n\n 지금까지 \n\n 나의 프위스 \n <좌충우돌 6일간의 프위스 여행 일기> \n\n 를 플레이 해주셔서 감사합니다 (_ _)" with fade
+
     return
