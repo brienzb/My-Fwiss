@@ -1043,7 +1043,6 @@ label start:
 
 
 label happy_ending:
-    # na "해피엔딩!"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1069,7 +1068,6 @@ label happy_ending:
 
 
 label funny_ending:
-    # na "재미엔딩!"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1099,7 +1097,6 @@ label funny_ending:
 
 
 label healthy_ending:
-    # na "건강엔딩!"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1129,7 +1126,6 @@ label healthy_ending:
 
 
 label money_ending:
-    # na "금전엔딩!"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1156,8 +1152,6 @@ label money_ending:
 
 
 label hidden_ending:
-    # 진엔딩: 눈을 떠보니 10월 스위스 샬레에서의 아침.. 아직 우리의 유럽 여행은 끝나지 않았다..!!!
-    # na "히든엔딩!"
 
     # image: 샬레 사진
     ne "샬레잖아..??" with vpunch
