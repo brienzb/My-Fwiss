@@ -158,7 +158,7 @@ label start:
         "타지에 왔으니 지하철도 한번 타볼까~?":
             $ funny += main_point
             $ healthy += minus_point
-            ne "한국과는 다른 쾌쾌한 느낌.. 하지만 이것마저 운치로구나"
+            ne "한국과는 다른 쾌쾌한 느낌.. 하지만 이것마저 재미지구나"
         "숙소 가는 길부터 여행의 시작! 기차타고 숑숑":
             $ happy += main_point
             $ funny += minus_point
@@ -221,7 +221,7 @@ label start:
         "본사가 초콜릿 공장?! 에끌레르가 맛있는 <웡카's브레드>!":
             $ funny += main_point
             $ choice_word = "에끌레르"
-            ne "이름부터 믿음이 가버린다.. ㅎㅁㅎ 어서 빨리 먹고 싶다~"
+            ne "이름부터 믿음이 가버린다.. ㅎㅁㅎ\n어서 빨리 먹고 싶다~"
         "프위스식 정통 샌디치~ 샌드위치가 맛있는 <메인웨이>!":
             $ healthy += main_point
             $ choice_word = "샌드위치"
@@ -681,7 +681,7 @@ label start:
             $ happy += main_point
             $ healthy += main_point
         "오른쪽 길! 왠지 재밌어보이고 길가다 돈도 주울 수 있을 것 같은 느낌이?!":
-            $ healthy += main_point
+            $ funny += main_point
             $ money += main_point
 
     ne "오케이! 여기로 정했으!!"
@@ -830,6 +830,7 @@ label start:
             $ happy += main_point
         "건강을 가져다 줄 것만 같은 노란 메리골드 💛":
             $ healthy += main_point
+            $ hidden += sub_point
         "부귀를 가져다 줄 것만 같은 진분홍 모란 ❤️":
             $ money += main_point
         "즐거움을 가져다 줄 것만 같은 흰분홍 철쭉 🤍":
@@ -1016,7 +1017,7 @@ label start:
     ne "엥..? 잠깐만.. 여기는..?"
 
     # 히든 엔딩 조건
-    if hidden == 10:
+    if hidden >= 10:
         jump hidden_ending
 
     # 행복, 재미, 건강, 금전 엔딩 조건 (순서대로 우선순위 조건)
@@ -1147,7 +1148,7 @@ label money_ending:
     na "(복권을 확인하는 유나은)" with fade
     ne "히이이이이ㅣㅣㄱ!!!!!" with hpunch
     ne "5개랑 보너스 번호가 맞는거면,, 2등 당첨인건가..!!! ㅎㅁㅎ"
-    ne "2등 당첨 금액이면 5000천만원!!! 대---박"
+    ne "2등 당첨 금액이면 5000만원!!! 대---박"
     ne "이건 꿈이 아니겠지..??"
     ne "끼야호~!~! ><"
     ne "오늘은 역시 뭔가 될 것만 같은 기분이라니까~~ ㅎㅎ"
