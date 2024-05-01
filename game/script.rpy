@@ -14,6 +14,7 @@ define audio.best_part = "sound/music/Daniel Caesar Best Part.mp3"
 define audio.walk = "sound/music/Yerin Baek Walk.mp3"
 define audio.dynamite = "sound/music/BTS DYNAMITE.mp3"
 
+
 # 게임에서 사용할 캐릭터를 정의합니다.)
 define ne = Character("유나은", color="#f7b1cb")
 define so = Character("???", color="#214bac")
@@ -1041,10 +1042,6 @@ label start:
     ## Ending ##
 
     # image: 검은색 배경 (그냥 사진 X)
-    ne "흠냐 흠냐.." with fade
-    ne "음.. 지금까지 잔건가..?"
-    ne "비행기는 도착한건가?"
-    ne "엥..? 잠깐만.. 여기는..?"
     stop music fadeout 2.0
     play music disney_ending fadein 2.0
 
@@ -1081,6 +1078,12 @@ label start:
 
 
 label happy_ending:
+    $ choice_word = "행복 지수 만땅 엔딩"
+    
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1107,6 +1110,12 @@ label happy_ending:
 
 
 label funny_ending:
+    $ choice_word = "재미 지수 만땅 엔딩"
+    
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1137,6 +1146,12 @@ label funny_ending:
 
 
 label healthy_ending:
+    $ choice_word = "건강 지수 만땅 엔딩"
+    
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1167,6 +1182,12 @@ label healthy_ending:
 
 
 label money_ending:
+    $ choice_word = "금전 지수 만땅 엔딩"
+    
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
 
     # image: 집 (방 안 침대가 보이는 배경) 사진
     ne "우리 집이잖아~?~?" with vpunch
@@ -1194,6 +1215,12 @@ label money_ending:
 
 
 label hidden_ending:
+    $ choice_word = "히든 엔딩"
+    
+    ne "흠냐 흠냐.." with fade
+    ne "음.. 지금까지 잔건가..?"
+    ne "비행기는 도착한건가?"
+    ne "엥..? 잠깐만.. 여기는..?"
 
     # image: 샬레 사진
     ne "샬레잖아..??" with vpunch
@@ -1222,6 +1249,29 @@ label hidden_ending:
 label end_credits:
     nvl clear
     "\n\n\n - 끝 - \n\n\n 지금까지 \n\n 나의 프위스 \n <좌충우돌 6일간의 프위스 여행 일기> \n\n 를 플레이 해주셔서 감사합니다 (_ _)" with fade
+
+    nvl clear
+    "본 엔딩은 [choice_word]으로, 해당 엔딩을 포함하여 총 5개의 엔딩이 있습니다"
+    "다른 엔딩도 궁금하다면 아래 선택지를 눌러서 확인해보세요~ ㅎ\n\n"
+
+    menu (nvl=True):
+        "행복 지수 만땅 엔딩":
+            $ choice_word = "행복 지수 만땅 엔딩"
+            jump happy_ending
+        "재미 지수 만땅 엔딩":
+            $ choice_word = "재미 지수 만땅 엔딩"
+            jump funny_ending
+        "건강 지수 만땅 엔딩":
+            $ choice_word = "건강 지수 만땅 엔딩"
+            jump healthy_ending
+        "금전 지수 만땅 엔딩":
+            $ choice_word = "금전 지수 만땅 엔딩"
+            jump money_ending
+        "히든 엔딩":
+            $ choice_word = "히든 엔딩"
+            jump hidden_ending
+        "오케이- 여기까지! 이제 안뇽~ 게임 종료!":
+            pass
     
     stop music fadeout 2.0
     return
