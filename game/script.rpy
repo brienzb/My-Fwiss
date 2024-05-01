@@ -3,6 +3,17 @@
 # image 문을 사용해 이미지를 정의합니다.
 # image eileen happy = "eileen_happy.png"
 
+# 음악
+define audio.disney_prologue = "sound/music/bgm_disney_prologue.mp3"
+define audio.disney_ingame = "sound/music/bgm_disney_ingame.mp3"
+define audio.disney_ending = "sound/music/bgm_disney_ending.mp3"
+
+define audio.lamour_les_baguettes_paries = "sound/music/LAmour Les Baguettes Paris.mp3"
+define audio.bad = "sound/music/wave to earth bad.mp3"
+define audio.best_part = "sound/music/Daniel Caesar Best Part.mp3"
+define audio.walk = "sound/music/Yerin Baek Walk.mp3"
+define audio.dynamite = "sound/music/BTS DYNAMITE.mp3"
+
 # 게임에서 사용할 캐릭터를 정의합니다.)
 define ne = Character("유나은", color="#f7b1cb")
 define so = Character("???", color="#214bac")
@@ -29,6 +40,8 @@ init -999:
 
 # 여기에서부터 게임이 시작합니다.
 label start:
+    stop music fadeout 2.0
+    play music disney_prologue fadein 2.0
 
     ## prologue ##
 
@@ -77,6 +90,8 @@ label start:
 
 
     ## Day 1 ##
+    stop music fadeout 2.0
+    play music disney_ingame fadein 2.0
 
     $ renpy.notify("프위스 여행 1일차")
     
@@ -173,7 +188,9 @@ label start:
     ne "마침 이 호텔이 프위스의 명물 <둥동탑> 근처였지??"
     ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
 
-    # image: 에펠탑 야경 사진, music: 스텔라장 - L’Amour, Les Baguettes, Paris
+    # image: 에펠탑 야경 사진
+    stop music fadeout 2.0
+    play music lamour_les_baguettes_paries fadein 2.0
     ne "우와 대박!!" with fade
     ne "너무 멋지다.."
     ne "내가 둥동탑을 실제로 보게될 줄은 ㅠㅠ.. 크으 감격스럽다"
@@ -191,6 +208,9 @@ label start:
     "지금 이 순간으로 풀리는 느낌이다"
     "남은 모든 여행이 오늘만 같기를 바라며"
     "유나은은 늦게까지 구경하다 숙소에 들어와 잠을 청했다"
+    "(이 다음은 다음 날 입니다~\n노래를 더 듣고 싶으면 잠깐 여기서 감상하세요 ^^)"
+    stop music fadeout 2.0
+    play music disney_ingame fadein 2.0
 
 
     ## Day 2 ##
@@ -374,22 +394,30 @@ label start:
 
     menu:
         "요새 푹 빠진 노래!! <Wave to Earth - Bad>":
-            # music: Wave to Earth - Bad
+            stop music fadeout 2.0
+            play music bad fadein 2.0
+
             $ money += main_point
             ne "대박!! 이걸 재즈바에서 듣게 되다니..! 그것도 프위스에서"
             ne "재즈바 온 보람이 있어! 돈이 하나도 안아깝잖아!!"
         "재즈바하면 이 노래징~~ <Daniel Caesar - Best Part>":
-            # music: Daniel Caesar - Best Part
+            stop music fadeout 2.0
+            play music best_part fadein 2.0
+
             $ healthy += main_point
             ne "크으~~ 감성 쥑인다~~"
             ne "술을 마시지 않아도 취하는 구나 ^^"
         "이런거 신청해도 해주나? <백예린 - 산책>":
-            # music: 백예린 - 산책
+            stop music fadeout 2.0
+            play music walk fadein 2.0
+
             $ happy += main_point
             ne "ㅎㅁㅎ 이왜진????"
             ne "그런데 프위스 재즈바에서 듣는 산책이라니.. 묘하면서 행복하다 ㅎㅎ"
         "아몰랑 국뽕이 최고여 >< <BTS - 다이너마이트>":
-            # music: BTS - 다이너마이트
+            stop music fadeout 2.0
+            play music dynamite fadein 2.0
+
             $ funny += main_point
             ne "진짜 틀어주네?!?! ㅋㅋㅋ"
             ne "으어어어ㅓ 국뽕이 차오른드아아ㅏㅏㅏ.."
@@ -399,6 +427,8 @@ label start:
     "신청한 노래 뿐만 아니라 다른 재즈곡들도 들으며 마음의 힐링을 하게된다"
     "그렇게 프위스의 두번째 밤이 유나은을 은은하게 비치다 어두워진다"
     "(이 다음은 다음 날 입니다~\n노래를 더 듣고 싶으면 잠깐 여기서 감상하세요 ^^)"
+    stop music fadeout 2.0
+    play music disney_ingame fadein 2.0
 
 
     ## Day 3 ##
@@ -1015,6 +1045,8 @@ label start:
     ne "음.. 지금까지 잔건가..?"
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
+    stop music fadeout 2.0
+    play music disney_ending fadein 2.0
 
     # 히든 엔딩 조건
     if hidden >= 10:
@@ -1190,5 +1222,6 @@ label hidden_ending:
 label end_credits:
     nvl clear
     "\n\n\n - 끝 - \n\n\n 지금까지 \n\n 나의 프위스 \n <좌충우돌 6일간의 프위스 여행 일기> \n\n 를 플레이 해주셔서 감사합니다 (_ _)" with fade
-
+    
+    stop music fadeout 2.0
     return
