@@ -8,8 +8,19 @@ image korea_airport_2 = "images/day1/korea_airport_2.png"
 image korea_airplain = "images/day1/korea_airplain.png"
 image korea_airplain = "images/day1/korea_airplain.png"
 image paern = "images/day1/paern.png"
-image paern_home = "images/day1/paern_home.png"
+image paern_home_1 = "images/day1/paern_home.png"
 image ddtower = "images/day1/ddtower.png"
+
+image paern_home_2 = "images/day2/paern_home.png"
+image bread = "images/day2/bread.png"
+image paern_load_1 = "images/day2/paern_load_1.png"
+image art_gallery = "images/day2/art_gallery.png"
+image fountain = "images/day2/fountain.png"
+image paern_load_2 = "images/day2/paern_load_2.png"
+image paern_load_3 = "images/day2/paern_load_3.png"
+image department_store = "images/day2/department_store.png"
+image rooftop = "images/day2/rooftop.png"
+image jazz_bar = "images/day2/jazz_bar.png"
 
 
 # 음악
@@ -152,8 +163,8 @@ label start:
         "전자책~!~! 평소 보고 싶었던 것들도 잔뜩 다운 받아놨다!":
             $ money += main_point
             ne "비행기에서 책 읽는 나란 여자~ 교양이 쌓이는 기분이군 ㅎ"
-
     hide korea_airport_2
+
     show korea_airplain
     na "(그렇게 몇분이 지나다 자게된 유나은)" with fade
     ne "흠냐 흠냐"
@@ -167,8 +178,8 @@ label start:
     "어쩌구 저쩌구"
     "..."
     "그렇게 유나은은 무사 착륙하고 프위스 공항에 도착했다"
-
     hide korea_airplain
+
     show paern
     ne "키야~~ 프위스 공기" with fade
     ne "후- 하~"
@@ -193,9 +204,9 @@ label start:
             $ happy += main_point
             $ funny += minus_point
             ne "도시라 너무 슉슉 지나가지만! 얼른 짐두고 여행을 즐겨야징~~"
+    hide paern
 
-    hide korea_airplain
-    show paern_home
+    show paern_home_1
     na "(어찌어찌 잘 이동해서 숙소에 도착한 유나은)" with fade
     ne "나이스~~ 드뎌 도착!!!" with vpunch
     ne "이라고 했지만,, 벌써 시간이 저녁 6시네 ㅠㅠ"
@@ -203,7 +214,7 @@ label start:
     ne "그렇다고 오늘을 그대로 버리긴 아까운데.."
     ne "마침 이 호텔이 프위스의 명물 <둥동탑> 근처였지??"
     ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
-    hide paern_home
+    hide paern_home_1
 
     show ddtower
     stop music fadeout 2.0
@@ -228,13 +239,14 @@ label start:
     "(이 다음은 다음 날 입니다~\n노래를 더 듣고 싶으면 잠깐 여기서 감상하세요 ^^)"
     stop music fadeout 2.0
     play music disney_ingame fadein 2.0
+    hide ddtower
 
 
     ## Day 2 ##
 
     $ renpy.notify("프위스 여행 2일차")
     
-    # image: 파른 숙소 사진
+    show paern_home_2
     na "(유나은 공주님 일어나세요~)" with fade
     ne "으어어어ㅓ.."
     ne "벌써 아침인가..??"
@@ -270,8 +282,9 @@ label start:
     "주변에 미켈란젤로의 영향을 받은 건물들이 아름답게 펼쳐져 있다"
     "(어디선가 공찍이라는 소리도 들리는 것 같다..? ㅇㅅㅇ)"
     "크흠.. 무튼 그렇게 유나은은 빵집까지 순조롭게 잘 찾아갔는데.."
-    
-    # image: 빵집
+    hide paern_home_2
+
+    show bread
     na "(빵을 왕창 사들고 나온 유나은)" with fade
     ne "너무 맛있어보여서 사려던거 말고 이것저것 다 사버렸잖아?"
     ne "에이 뭐 아무렴 어때 ㅎㅎ"
@@ -279,8 +292,9 @@ label start:
     ne "와-앙~"
     ne "!!! 너무 맛있어 ㅠㅠ" with hpunch
     ne "역시 프위스라 그런지 이 분위기에 취해 빵도 맛있구나~~"
+    hide bread
 
-    # image: 유럽 프랑스 다리 or 거리
+    show paern_load_1
     na "(빵을 다 먹고 난 뒤)" with fade
     ne "아~~ 잘 먹었다~~ ^^"
     ne "먹다보니 아침의 프위스 거리를 구경하게 되었네 ㅎㅎ"
@@ -293,8 +307,9 @@ label start:
     "프위스 아침 거리를 거닐며 오렌지 미술관으로 향하는 유나은"
     "프위스만의 독특한 건물 양식과 달리기하는 프위스 주민들을 보며"
     "오렌지 미술관으로 향했다"
+    hide paern_load_1
 
-    # image: 미술관
+    show art_gallery
     na "(오렌지 미술관에 도착한 유나은)" with fade
     ne "여기가 내가 좋아하는 모네 그림도 있고 여러 다른 작가들의 그림도 있는 미술관이라 했지?"
     ne "우와~!~!" with vpunch
@@ -322,8 +337,9 @@ label start:
     "몇시간이 지났는지도 모르게 계속 그림들을 봤다"
     "아름다운 그림들을 보며 마음의 평화와 양식을 찾게 된 유나은"
     "그러다 보니 배가 고파져서 점심을 먹기 위해 미술관을 나왔는데.."
+    hide art_gallery
 
-    # image: 공원(??)
+    show fountain
     ne "으아아아ㅏ.. 교양을 너무 쌓았더니(?) 배가 고프네?" with fade
     ne "ㅋㅋㅋㅋㅋㅋ"
     ne "뭐~ 아무렴 어때~? 밥이나 먹으러 가자~"
@@ -348,8 +364,9 @@ label start:
     "프위스에서 만든 음식이라 그런지 꽤나 신선하고 좋았다"
     "음식으로도 특별한 경험을 할 수 있단걸 느낀 유나은은"
     "밥을 다 먹고 2차 행선지를 향해 나아갔다"
+    hide fountain
 
-    # image: 식당 앞 or 길거리
+    show paern_load_2
     ne "꺼-억 잘먹었다~ ㅎ" with fade
     ne "어디보자 이제 시간이 한 두세시가 넘었네"
     ne "그렇다면 그 다음에 갈 곳은 바로~~"
@@ -357,8 +374,9 @@ label start:
     ne "프위스까지 왔는데 쇼핑은 한번 해야지 흐흐"
     ne "요 백화점에 명품이란 명품은 다 있다고 했고 심지어 한국에서 사는 것보다 싸다고 했으니..!"
     ne "늦기전에 얼른 가쟝~~"
+    hide paern_load_2
 
-    # image: 백화점 내부
+    show department_store
     na "(백화점에 도착한 유나은)" with fade
     ne "진짜 명품이란 명품은 다 있잖아..!! ㅎㅁㅎ"
     ne "샤넬에 구찌, 루이비똥, 티파니앤코, 셀린느, .."
@@ -387,8 +405,9 @@ label start:
     "하나하나 구경하다 보니 어느새 꼭대기까지 올라갔는데"
     "그 앞에 전망대로 이어지는 길이 있었다"
     "유나은은 그렇게 전망대로 향했다"
+    hide department_store
 
-    # image: 백화점 전망대
+    show rooftop
     ne "우와.. 이게 정녕 백화점 전망이란 말인가.." with fade
     ne "너무 아름답다.."
     ne "도심이 쫙 펼쳐지는 이 광경"
@@ -398,8 +417,9 @@ label start:
     ne "하하.. 이게 왠걸 이 타이밍에 기가막히게 배에서 밥 달라고 하네"
     ne "그래! 이제 슬슬 해도 지는 것 같고~"
     ne "어서 미리 예약해둔 재즈바로 가자!!"
+    hide rooftop
 
-    # image: 재즈바
+    show jazz_bar
     na "(재즈바로 이동한 유나은)" with fade
     ne "오호!! 여기가 프위스에 유명하다는 재즈바 <딩가딩가>로군!"
     ne "주변 외국인들도 즐겁게 술을 마시고 있고~"
@@ -446,6 +466,7 @@ label start:
     "(이 다음은 다음 날 입니다~\n노래를 더 듣고 싶으면 잠깐 여기서 감상하세요 ^^)"
     stop music fadeout 2.0
     play music disney_ingame fadein 2.0
+    hide jazz_bar
 
 
     ## Day 3 ##
