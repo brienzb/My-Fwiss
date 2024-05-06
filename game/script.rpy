@@ -1,7 +1,16 @@
 ﻿# 이 파일에 게임 스크립트를 입력합니다.
 
 # image 문을 사용해 이미지를 정의합니다.
-# image eileen happy = "eileen_happy.png"
+image line_office = "images/line_office.png"
+
+image korea_airport_1 = "images/day1/korea_airport_1.png"
+image korea_airport_2 = "images/day1/korea_airport_2.png"
+image korea_airplain = "images/day1/korea_airplain.png"
+image korea_airplain = "images/day1/korea_airplain.png"
+image paern = "images/day1/paern.png"
+image paern_home = "images/day1/paern_home.png"
+image ddtower = "images/day1/ddtower.png"
+
 
 # 음악
 define audio.disney_prologue = "sound/music/bgm_disney_prologue.mp3"
@@ -53,7 +62,7 @@ label start:
     "그렇게 몇일을 보내던 어느 날"
     "누군가에게 인스타 DM이 하나 왔는데.."
 
-    # image: 라인 회사 배경
+    show line_office
     so "(인스타 DM) 당신을 프위스로 초대합니다!" with fade 
 
     ne "엥? 누구지..?"
@@ -83,7 +92,8 @@ label start:
     na "(이것저것 준비를 마친뒤)" with fade
     ne "오케이~ 좋았어!!"
     ne "벌써부터 여행이 기다려지는군 ㅎ"
-    
+    hide line_office
+
     nvl clear
     "유나은은 그렇게 들뜬 마음으로 DM을 보며 여행갈 상상에 빠진다"
     "그렇게 몇일이 지나 드디어 다가온 여행 당일!"
@@ -96,7 +106,7 @@ label start:
 
     $ renpy.notify("프위스 여행 1일차")
     
-    # image: 공항 사진
+    show korea_airport_1
     na "(공항에 도착한 유나은)" with fade
     ne "드디어 이 날이 오는구나!!"
     ne "크으~ 몇일 안됐는데도 벌써 설렌다 ㅎㅎ 프위스 여행이라니"
@@ -116,8 +126,9 @@ label start:
     
     ne "휴 다행이다~ 바로 앞 게이트였구나 ㅎㅎ"
     ne "늦기 전에 얼른 들어가쟝~~"
+    hide korea_airport_1
     
-    # image: 비행기 내부 안 사잔
+    show korea_airport_2
     na "(비행기 좌석에 탑승한 뒤)" with fade
     ne "읏차~! 좌석 탑승 완료!!"
     ne "히히 오랜만에 타는 비행기라 그런지 좀 떨리는데?"
@@ -142,6 +153,8 @@ label start:
             $ money += main_point
             ne "비행기에서 책 읽는 나란 여자~ 교양이 쌓이는 기분이군 ㅎ"
 
+    hide korea_airport_2
+    show korea_airplain
     na "(그렇게 몇분이 지나다 자게된 유나은)" with fade
     ne "흠냐 흠냐"
     ne "음.. 얼만큼 왔지..??"
@@ -155,7 +168,8 @@ label start:
     "..."
     "그렇게 유나은은 무사 착륙하고 프위스 공항에 도착했다"
 
-    # image: 프위스(프랑스 or 스위스) 공항 사진
+    hide korea_airplain
+    show paern
     ne "키야~~ 프위스 공기" with fade
     ne "후- 하~"
     ne "너무 좋다!! 꺄륵"
@@ -180,16 +194,18 @@ label start:
             $ funny += minus_point
             ne "도시라 너무 슉슉 지나가지만! 얼른 짐두고 여행을 즐겨야징~~"
 
+    hide korea_airplain
+    show paern_home
     na "(어찌어찌 잘 이동해서 숙소에 도착한 유나은)" with fade
-    # image: 파른 숙소 사진
     ne "나이스~~ 드뎌 도착!!!" with vpunch
     ne "이라고 했지만,, 벌써 시간이 저녁 6시네 ㅠㅠ"
     ne "뭐 사실 첫째날은 어느정도 예상한 것이니 다음날에 더 활기차게 놀아보자~!"
     ne "그렇다고 오늘을 그대로 버리긴 아까운데.."
     ne "마침 이 호텔이 프위스의 명물 <둥동탑> 근처였지??"
     ne "야경도 구경할 겸 얼른 둥동탑 보러 나가봐야겠다~"
+    hide paern_home
 
-    # image: 에펠탑 야경 사진
+    show ddtower
     stop music fadeout 2.0
     play music lamour_les_baguettes_paries fadein 2.0
     ne "우와 대박!!" with fade
