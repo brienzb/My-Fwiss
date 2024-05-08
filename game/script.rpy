@@ -22,6 +22,18 @@ image department_store = "images/day2/department_store.png"
 image rooftop = "images/day2/rooftop.png"
 image jazz_bar = "images/day2/jazz_bar.png"
 
+image paern_home_3 = "images/day3/paern_home.png"
+image in_train = "images/day3/in_train.png"
+image mountain_in_train = "images/day3/mountain_in_train.png"
+image lake_in_train = "images/day3/lake_in_train.png"
+image building_in_train = "images/day3/building_in_train.png"
+image alpaca_in_train = "images/day3/alpaca_in_train.png"
+image anmonix = "images/day3/anmonix.png"
+image anmonix_lake = "images/day3/anmonix_lake.png"
+image anmonix_under_mountain = "images/day3/anmonix_under_mountain.png"
+image anmonix_mountain = "images/day3/anmonix_mountain.png"
+image anmonix_home = "images/day3/anmonix_home.png"
+
 
 # 음악
 define audio.disney_prologue = "sound/music/bgm_disney_prologue.mp3"
@@ -473,58 +485,69 @@ label start:
 
     $ renpy.notify("프위스 여행 3일차")
     
-    # image: 파른 숙소 사진
+    show paern_home_3
     na "(유나은 공주님 일어나세요~)" with fade
     ne "으어어어ㅓ.."
     ne "역시 아침은 눈뽑 하루군 ㅋㅋ.."
     ne "그래도 아름다운 이 프위스 ㅎㅎ"
     ne "오늘은 프위스의 소도시 안모니에 가는 날이지!!"
-    ne "얼른 준비하고 기차타러 쇼숑하자~~"
+    ne "얼른 호텔 조식만 먹구 기차타러 쇼숑하자~~"
 
     nvl clear
-    "유나은은 부랴부랴 준비한 뒤 기차를 타러 숙소를 나섰다"
+    "유나은은 부랴부랴 준비한 뒤 조식을 먹고"
+    "기차를 타러 숙소를 나섰다"
     "이틀밤밖에 자지 않은 숙소지만"
     "정든 숙소를 떠나는 길에 왠지 마음이 뭉클해진다"
     "하지만 아쉬운 마음을 뒤로한채 기차역까지 들뜬 마음으로 발걸음을 옮겼다"
+    hide paern_home_3
     
-    # image: 기차안 사진
+    show in_train
     na "(기차역에 도착한 뒤 좌석에 앉은 유나은)" with fade
     ne "휴.. 간신 세이프..!!"
     ne "때 마침 출발하는 기차라니~~"
     ne "역시 난 운이 좋은가봐 후훗 ㅎ"
     ne "어디보자 기차는 자고로 밖 풍경을 보는 재미도 쏠쏠하지!"
     ne "이 터널이 지나면 어떤 풍경이 펼쳐질까? ><"
+    hide in_train
 
     menu:
-        "드넓은 산이 웅장하게 나타났음 좋겠다!":
-            # image: 웅장하고 드넓은 산 사진 (열차안에서 보이는 풍경처럼?)
+        "거대한 산이 웅장하게 나타났음 좋겠다!":
+            show mountain_in_train
+
             $ funny += main_point
             $ choice_word = "산"
         "운치있는 호수가 아름답게 펼쳐졌음 좋겠다!":
-            # image: 아름답고 운치있는 호수 사진 (열차안에서 보이는 풍경처럼?)
+            show lake_in_train
+
             $ happy += main_point
             $ hidden += sub_point
             $ choice_word = "호수"
-        "삐까뻔쩍한 건물들이 으리으리하게 보였으면 좋겠다!":
-            # image: 삐까뻔쩍하고 으리으리한 건물 사진 (열차안에서 보이는 풍경처럼?)
+        "삐까뻔쩍한 건물이 으리으리하게 보였으면 좋겠다!":
+            show building_in_train
+
             $ money += main_point
             $ choice_word = "건물"
-        "광활한 벌판이 푸르르게 펼쳐졌음 좋겠다!":
-            # image: 푸르르고 광활한 벌판 사진 (동물도 있음 좋고) (열차안에서 보이는 풍경처럼?)
+        "푸르른 벌판위에 풀을 뜯고 있는 알파카가 있었으면 좋겠다!":
+            show alpaca_in_train
+
             $ healthy += main_point
             $ choice_word = "벌판"
-
+    
     ne "헐 대박!!" with vpunch
     ne "진짜로 내가 기대하던 [choice_word] 풍경이 나타났잖아!!!"
     ne "너무 낭만있고 너무 좋다.."
     ne "한 폭의 그림같은 이 순간 ㅎㅎ 행복 그잡채"
+    hide mountain_in_train
+    hide lake_in_train
+    hide building_in_train
+    hide alpaca_in_train
 
     nvl clear
     "유나은은 창밖 풍경을 보며 기차 여행의 설렘을 즐기다가"
     "아름다운 풍경에 정신을 빼앗기며 스르르 잠에 들었다"
     "얼마만큼의 시간이 지났을까 유나은은 금새 목적지에 도착하게 되었다"
 
-    # image: 안시 소도시 (구시가지) 사진
+    show anmonix
     ne "여기가 안모니인건가? ㅎㅎ" with fade
     ne "역시 어제 있었던 프위스 수도인 파른과는 또 다른 느낌이군"
     ne "후--- 하~~~~"
@@ -532,7 +555,7 @@ label start:
     ne "너무나 평온하다 ^^"
     ne "엇 아닛!!" with vpunch
     ne "저기는 호수인가..!! ㅎㅁㅎ"
-    # image: 안시 호수 및 공원 사진
+    show anmonix_lake with fade
     ne "헐 대박!!!"
     ne "너무 이쁘다.. ㅠㅠ"
     ne "저기 패들보트도 있는 것 같은데 저거나 타면서 호수 구경 제대로 해볼까~?"
@@ -557,13 +580,15 @@ label start:
 
     ne "후하~ 잘 즐겼다 ㅎㅎ" with fade
     ne "이제 어서 짐을 숙소에 두고 오후 일정을 하러 가보자!!"
+    hide anmonix_lake
 
     nvl clear
     "유나은은 숙소에 짐을 두고 컵라면으로 끼니를 떼운 뒤"
     "안모니의 대표적인 설산인 동블랑을 등반하기 위해"
     "케이블카가 있는 곳으로 향했다"
+    hide anmonix
 
-    # image: 샤모니 산 아래 케이블카 사진
+    show anmonix_under_mountain
     na "(산 아래 케이블카가 있는 곳에 도착한 유나은)" with fade
     ne "오오"
     ne "여기가 세계 최고의 설산인 동블랑이 있는 곳인가..!!"
@@ -571,14 +596,14 @@ label start:
     ne "이건 안탈수가 없지 ㅇㅇ"
     ne "하나 둘~ 바로가쟝~"
 
-    # image: 샤모니 설산 사진
+    show anmonix_mountain
     na "(케이블카를 타고 산 위로 올라간 유나은)" with fade
     ne "히이이이익" with vpunch
     ne "이건 진짜 미친거 아냐!!!"
     ne "대박 이렇게 멋지고 아름다울 수 있는 것인가..!!"
     ne "날씨도 너무 좋아서 저 멀리 있는 설산까지 한눈에 다 보인다 ㅎㅁㅎ"
     ne "이건 무.적.권 사진 찍어야해!!"
-    na "(찰칵 찰칵)"  # (괜찮은 transition 있으면 추가)
+    na "(찰칵 찰칵)"
     ne "흠흠~ 내 사진도 찍어둘까~?"
     ne "포즈는.."
 
@@ -599,6 +624,7 @@ label start:
     ne "그래도 이 설산은.. 한국가면 또 생각날거 같아"
     ne "너무나 아름다운 이 풍경"
     ne "눈으로라도 잔뜩 담아두고 오자!!"
+    hide anmonix_mountain
 
     nvl clear
     "그렇게 몇분을 더 구경하던 유나은은"
@@ -607,8 +633,9 @@ label start:
     "높은 설산에서부터 타고 흐른건지 모를 푸르른 계곡이"
     "차갑게 만든 유나은의 손발을 따뜻하게 녹인다"
     "이렇게 동블랑의 일정을 모두 소화하고 유나은은 다시 숙소로 이동했다"
+    hide anmonix_under_mountain
 
-    # image: 안시 숙소 사진
+    show anmonix_home
     na "(숙소에 도착한 유나은)" with fade
     ne "으아아아아ㅏㅏㅏ"
     ne "오늘은 다양하게 많은걸 하진 않았지만.."
@@ -628,6 +655,7 @@ label start:
     "너무나 힐링한 저녁이였을까?"
     "유나은은 배부르게 먹고 행복한 순간들만 껴안은채"
     "언제가 됐는지도 모르게 잠에 들었다"
+    hide anmonix_home
 
 
     ## Day 4 ##
