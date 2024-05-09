@@ -28,11 +28,21 @@ image mountain_in_train = "images/day3/mountain_in_train.png"
 image lake_in_train = "images/day3/lake_in_train.png"
 image building_in_train = "images/day3/building_in_train.png"
 image alpaca_in_train = "images/day3/alpaca_in_train.png"
+image cow_in_train = "images/day3/cow_in_train.png"
 image anmonix = "images/day3/anmonix.png"
 image anmonix_lake = "images/day3/anmonix_lake.png"
 image anmonix_under_mountain = "images/day3/anmonix_under_mountain.png"
 image anmonix_mountain = "images/day3/anmonix_mountain.png"
-image anmonix_home = "images/day3/anmonix_home.png"
+image anmonix_home_1 = "images/day3/anmonix_home.png"
+
+image anmonix_home_2 = "images/day4/anmonix_home.png"
+image cruise_ship = "images/day4/cruise_ship_2.png"
+image brioche = "images/day4/brioche.png"
+image brioche_home = "images/day4/brioche_home.png"
+image brioche_load = "images/day4/brioche_load.png"
+image brioche_dinner_1 = "images/day4/brioche_dinner_1.png"
+image brioche_dinner_2 = "images/day4/brioche_dinner_2.png"
+image star = "images/day4/star.png"
 
 
 # 음악
@@ -527,8 +537,8 @@ label start:
 
             $ money += main_point
             $ choice_word = "건물"
-        "푸르른 벌판위에 풀을 뜯고 있는 알파카가 있었으면 좋겠다!":
-            show alpaca_in_train
+        "푸르른 벌판위에 풀을 뜯고 있는 소들이 있었으면 좋겠다!":
+            show cow_in_train
 
             $ healthy += main_point
             $ choice_word = "벌판"
@@ -540,7 +550,7 @@ label start:
     hide mountain_in_train
     hide lake_in_train
     hide building_in_train
-    hide alpaca_in_train
+    hide cow_in_train
 
     nvl clear
     "유나은은 창밖 풍경을 보며 기차 여행의 설렘을 즐기다가"
@@ -635,7 +645,7 @@ label start:
     "이렇게 동블랑의 일정을 모두 소화하고 유나은은 다시 숙소로 이동했다"
     hide anmonix_under_mountain
 
-    show anmonix_home
+    show anmonix_home_1
     na "(숙소에 도착한 유나은)" with fade
     ne "으아아아아ㅏㅏㅏ"
     ne "오늘은 다양하게 많은걸 하진 않았지만.."
@@ -655,14 +665,14 @@ label start:
     "너무나 힐링한 저녁이였을까?"
     "유나은은 배부르게 먹고 행복한 순간들만 껴안은채"
     "언제가 됐는지도 모르게 잠에 들었다"
-    hide anmonix_home
+    hide anmonix_home_1
 
 
     ## Day 4 ##
 
     $ renpy.notify("프위스 여행 4일차")
     
-    # image: 안시 숙소 사진
+    show anmonix_home_2
     na "(유나은 공주님 일어나세요~)" with fade
     ne "으어어어ㅓ.."
     ne "맨날 똑같은 느낌으로 일어나는데 기분탓인가.. ㅎㅎ"
@@ -679,8 +689,9 @@ label start:
     "근처 구시가지 시장과 함께 아침해가 뜨는 모습만 봐도"
     "아쉬움 보단 행복만을 가득 안고 떠날 수 있었다"
     "무튼 유나은은 브리오슈까지의 여정으로 유람선을 타기로 했는데.."
+    hide anmonix_home_2
 
-    # image: 루체른 유람선 사진
+    show cruise_ship
     na "(유람선에 도착한 유나은)" with fade
     ne "읏챠~ 유람선 탑승 완료!!"
     ne "브리오슈까지 이 유람선을 타면 한번에 이동할 수 있다니~!~!"
@@ -715,8 +726,9 @@ label start:
     "중간 중간 여러 경유지를 거치며"
     "프위스의 다양한 섬과 자연 경관을 즐길 수 있었다"
     "얼마 지나지 않은 것 같은데 유나은은 그렇게 브리오슈까지 도착했다"
+    hide cruise_ship
 
-    # image: 브리엔츠 호수가 사진
+    show brioche
     na "(브리오슈에 도착한 유나은)" with fade
     ne "우와.. 여기가 그 말로만 듣던 브리오슈..??"
     ne "호수 물 색깔 좀 봐.. 에메랄드 빛이 따로 없어"
@@ -752,10 +764,11 @@ label start:
     "유나은은 그렇게 뜻밖의 동물 친구(?)와도 조우하며"
     "숙소까지의 산책을 이어갔다"
     "푸르른 날씨와 한적한 마을이 유나은의 마음도 편안하게 만들었다"
-    "걷다보니 어느새 샬레 앞까지 도착한 유나은"
-    "드디어 샬레 내부로 들어가게 되는데.."
+    "걷다보니 어느새 샬레 앞까지 도착하게 되었다"
+    hide brioche
 
-    # image: 샬레 내부 사진 (메인 화면)
+    show brioche_home
+    na "(샬레 안으로 들어온 유나은)" with fade
     ne "히이이이잉ㄱ" with vpunch
     ne "샬레 호수뷰 미쳤다잇~!~!"
     ne "오늘 나 너무 놀라는거 아냐??"
@@ -765,8 +778,9 @@ label start:
     ne "그러면 오늘은 샬레와 이 근처 구경으로만 일정을 세워볼까~?"
     ne "자! 그러면 일단 아까 올라오면서 점찍어둔 카페를 가고!"
     ne "거기서 빵을 사가지고 와서 동네 산책도 죠지장~~"
+    hide brioche_home
 
-    # image: 브리엔츠 -> 샬레 길거리 사진
+    show brioche_load
     na "(샬레에서 나온 유나은)" with fade
     ne "룰루랄라~~"
     ne "엇..! 올라올 때는 몰랐는데 길이 두갈래 길이 있었네..??"
@@ -792,8 +806,9 @@ label start:
     "..."
     "이렇게 시간을 보내다 어느덧 저녁이 되어"
     "유나은은 샬레에서 요리를 할 저녁거리를 사고 다시 샬레에 들어왔다"
+    hide brioche_load
 
-    # image: 샬레 내부 사진 (메인 화면)
+    show brioche_dinner_1
     ne "자~ 오늘의 저녁 메뉴는~~" with fade
     ne "두구두구두구두구.."
     ne "바로 바로..!!"
@@ -803,13 +818,16 @@ label start:
     ne "그걸 설마 구분 못하고 사는 사람이 어딧겠어 ㅋㄷ"
     ne "무튼 난 잘 사왔으니!!"
     ne "얼른 꿔서 맛나게 먹쟝 ㅎㅎ"
+    hide brioche_dinner_1
     
+    show brioche_dinner_2
     na "(배터지게 먹고난 유나은)" with fade
     ne "어우.. 너무 맛있게 잘먹었다.. 꺼억-"
     ne "넘 배부른데.. 밤산책 한번 더 스슥할까?? ㅋㅋ"
     ne "말해 뭐해~ 바로 고고씽~"
+    hide brioche_dinner_2
 
-    # image: 밤 샬레 or 별 사진
+    show star
     na "(밖에 나온 유나은)" with fade
     ne "벌써 저녁이라 그런지 아주 깜깜하구만..!! ㅎㅁㅎ"
     ne "엇 근데 하늘에 별이.."
@@ -838,6 +856,7 @@ label start:
     "창 밖으로 깜깜한 밤 사이에 환히 빛나는 달과 별들이 보인다"
     "아까도 보고 왔지만 이 아름다움에 취해 잠시 밖을 멍하니 바라보았는데"
     "유나은은 언제가 됐는지도 모르게 꿈나라로 빠지게 되었다"
+    hide star
 
 
     ## Day 5 ##
