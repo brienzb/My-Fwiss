@@ -38,11 +38,24 @@ image anmonix_home_1 = "images/day3/anmonix_home.png"
 image anmonix_home_2 = "images/day4/anmonix_home.png"
 image cruise_ship = "images/day4/cruise_ship_2.png"
 image brioche = "images/day4/brioche.png"
-image brioche_home = "images/day4/brioche_home.png"
+image brioche_home_1 = "images/day4/brioche_home.png"
 image brioche_load = "images/day4/brioche_load.png"
 image brioche_dinner_1 = "images/day4/brioche_dinner_1.png"
 image brioche_dinner_2 = "images/day4/brioche_dinner_2.png"
 image star = "images/day4/star.png"
+
+image brioche_home_2 = "images/day5/brioche_home_1.png"
+image brioche_home_3 = "images/day5/brioche_home_2.png"
+image freeday = "images/day5/freeday.png"
+image rnzelu = "images/day5/rnzelu.png"
+image rnzelu_lake_1 = "images/day5/rnzelu_lake_1.png"
+image rnzelu_lake_2 = "images/day5/rnzelu_lake_2.png"
+image rnzelu_lake_3 = "images/day5/rnzelu_lake_3.png"
+image rnzelu_lake_4 = "images/day5/rnzelu_lake_4.png"
+image rnzelu_lake_5 = "images/day5/rnzelu_lake_5.png"
+image rnzelu_lake_6 = "images/day5/rnzelu_lake_6.png"
+image rnzelu_dinner = "images/day5/rnzelu_dinner.png"
+image rnzelu_night = "images/day5/rnzelu_night.png"
 
 
 # 음악
@@ -767,7 +780,7 @@ label start:
     "걷다보니 어느새 샬레 앞까지 도착하게 되었다"
     hide brioche
 
-    show brioche_home
+    show brioche_home_1
     na "(샬레 안으로 들어온 유나은)" with fade
     ne "히이이이잉ㄱ" with vpunch
     ne "샬레 호수뷰 미쳤다잇~!~!"
@@ -778,7 +791,7 @@ label start:
     ne "그러면 오늘은 샬레와 이 근처 구경으로만 일정을 세워볼까~?"
     ne "자! 그러면 일단 아까 올라오면서 점찍어둔 카페를 가고!"
     ne "거기서 빵을 사가지고 와서 동네 산책도 죠지장~~"
-    hide brioche_home
+    hide brioche_home_1
 
     show brioche_load
     na "(샬레에서 나온 유나은)" with fade
@@ -863,7 +876,7 @@ label start:
 
     $ renpy.notify("프위스 여행 5일차")
     
-    # image: 샬레 사진
+    show brioche_home_2
     na "(유나은 공주님 일어나세요~)" with fade
     ne "드르렁 쿨~ 드르렁 쿨~"
     
@@ -871,7 +884,9 @@ label start:
     "그렇다"
     "유나은은 너무나도 편안한 분위기에 취해 꿀잠을 자고 있었다"
     "ㅋㅋ"
+    hide brioche_home_2
     
+    show brioche_home_3
     na "(그렇게 한 두시간을 더 자다가 깬 유나은)" with fade
     ne "흠냐 흠냐"
     ne "엥!!! 오전 내내 자버렸잖아..!!" with vpunch
@@ -891,8 +906,9 @@ label start:
     "프리데이는 프위스의 대표적인 업사이클링 업체로"
     "이미 국내외에서도 유명한 브랜드이다 ㅎㅎ"
     "무튼.. 그렇게 프리데이 본점이 있는 히리취로 향했는데.."
+    hide brioche_home_3
 
-    # image: 프라이탁 매장 사진
+    show freeday
     na "(프리데이 본점에 도착한 유나은)" with fade
     ne "우와~!~! 여기가 프리데이 본점..!!"
     ne "내가 여기를 직접 방문하는 순간이 오다니.. 넘 감격스럽다 ㅠㅠ"
@@ -928,8 +944,9 @@ label start:
     "안그래도 오늘 오후에는 프위스로 교환학생을 갔던 친구를 만나기로 했는데"
     "그 친구에게도 이 가방을 자랑할 생각에 마음이 들떠있었다"
     "유나은은 그렇게 가방을 잘 구매하고 친구를 만나러 른체루로 이동했다"
+    hide freeday
 
-    # image: 루체른 사진
+    show rnzelu
     na "(른체루에 도착한 유나은)" with fade
     ne "여기가 른체루구나!!"
     ne "오 여긴 도시같은 느낌인데 그렇다고 파른이랑은 또 다른 느낌이다!!"
@@ -957,19 +974,31 @@ label start:
     "그렇게 꽃을 사고 몇분 있다가 친구를 만나게 되었다"
     "오랜만에 만나는거라 약간은 어색할 줄 알았지만"
     "생각보다 너무 반갑고 즐거웠다"
+    hide rnzelu
     
-    # image: 각 대사마다 루체른 호수 이미지 변경
+    show rnzelu_lake_1
     na "이야기하면서 걷다가 어느새 근처 호수 앞까지 온 두 사람" with fade
+    hide rnzelu_lake_1
+    show rnzelu_lake_2
     na "공원에 돗자리를 깔고 수다를 이어갔다" with fade
+    hide rnzelu_lake_2
+    show rnzelu_lake_3
     na "프위스에서 먹은 음식들.. 보고 경험한 일들.. 프리데이 가방 자랑.. 등등" with fade
+    hide rnzelu_lake_3
+    show rnzelu_lake_4
     na "시간 가는줄 모르게 떠들던 둘은 어느새 날이 저무는 풍경을 바라보며 운치에 젖어들었다" with fade
+    hide rnzelu_lake_4
+    show rnzelu_lake_5
     na "그렇게 몇시간이 지났을까? 곧 저녁 시간이 다가왔다" with fade
+    hide rnzelu_lake_5
 
-    # image: 해가 진 느낌의 루체른 (노을 or 석양) 사진
+    show rnzelu_lake_6
     ne "후아!!" with fade
     ne "벌써 저녁이 다 되어버렸네..! ㅎㅁㅎ"
     ne "진예야! 같이 저녁 먹고 가자! ㅎㅎ"
+    hide rnzelu_lake_6
 
+    show rnzelu_dinner
     na "(근처 식당에 도착한 유나은과 진예)" with fade
     ne "우와 여기 식당 너무 근사하다~"
     ne "역시 프위스는 야외 테이블이 잘 되어 있구나!!"
@@ -997,8 +1026,9 @@ label start:
     "그렇게 밥을 먹고 진예와 유나은은 기차역에 도착했다"
     "둘은 아쉬운 마음을 뒤로한채 한국에서 보기로 약속하고"
     "각자의 길로 떠났다"
+    hide rnzelu_dinner
 
-    # image: 스위스 기차안 (밤 풍경)
+    show rnzelu_night
     na "(기차에 탄 유나은)" with fade
     ne "후..! 너무 즐겁게 떠들어서 그런지 피곤하네잉 ㅎㅎ.."
     ne "어여 숙소 도착하면 바로 씻고 자야겠다 흐흐"
@@ -1009,6 +1039,7 @@ label start:
     "눈을 감으며 오늘 하루 있었던 일들을 다시 상상해보며"
     "행복한 순간들만 가득했던 하루를 떠올리고"
     "미소를 머금은채 잠에 들었다"
+    hide rnzelu_night
 
 
     ## Day 6 ##
