@@ -2,6 +2,8 @@
 
 # image 문을 사용해 이미지를 정의합니다.
 image line_office = "images/line_office.png"
+image home = "images/home.png"
+image brienz_home = "images/brienz_home.png"
 
 image korea_airport_1 = "images/day1/korea_airport_1.png"
 image korea_airport_2 = "images/day1/korea_airport_2.png"
@@ -56,6 +58,12 @@ image rnzelu_lake_5 = "images/day5/rnzelu_lake_5.png"
 image rnzelu_lake_6 = "images/day5/rnzelu_lake_6.png"
 image rnzelu_dinner = "images/day5/rnzelu_dinner.png"
 image rnzelu_night = "images/day5/rnzelu_night.png"
+
+image brioche_home_4 = "images/day6/brioche_home.png"
+image ddmountain_train = "images/day6/ddmountain_train.png"
+image ddmountain_1 = "images/day6/ddmountain_1.png"
+image ddmountain_2 = "images/day6/ddmountain_2.png"
+image fwiss_airport = "images/day6/fwiss_airport.png"
 
 
 # 음악
@@ -1046,7 +1054,7 @@ label start:
 
     $ renpy.notify("프위스 여행 6일차 (마지막 날)")
     
-    # image: 샬레 사진
+    show brioche_home_4
     na "(유나은 공주님 일어나세요~)" with fade
     ne "읏----챠~~~"
     ne "어제 너무 기분 좋은 일들만 가득해서 꿀잠을 자서 그른가"
@@ -1079,15 +1087,18 @@ label start:
             $ hidden += sub_point
             $ choice_word = "주먹밥 도시락"
             ne "간단하지만 맛도 최강인 최고의 도시락!"
+    hide brioche_home_4
 
+    show ddmountain_train
     nvl clear
     "유나은은 그렇게 [choice_word]을 만들고 둥동산으로 향했다"
     "가는 길에 올라가서 마실 맥주도 한캔 사가지고 왔다"
     "산 정상까지는 산악 열차를 타고 올라가게 되어 있어서"
     "올라가는 길도 편하게 그리고 재미나게 갈 수 있었다"
     "마침내 정상에 도착한 유나은"
+    hide ddmountain_train
 
-    # image: 리기산 정상 사진
+    show ddmountain_1
     ne "우와!! 이 맑게 보이는 하늘을 봐!!!" with fade
     ne "너무나 예쁘다.."
     ne "지금까지 여행하며 여러 곳을 구경했지만"
@@ -1105,6 +1116,7 @@ label start:
     "너무나도 아쉬웠지만 우선은 그런 생각은 잠시 접어두고"
     "달콤한 낮잠을 청했다"
 
+    # image: 리기산 정상 사진
     na "(낮잠을 자고 일어난 유나은)" with fade
     ne "흠냐~ 음 잘잤다~ ㅎㅎ"
     ne "이제 진짜 마지막이구나 ㅠㅠ"
@@ -1113,7 +1125,9 @@ label start:
     ne "이 언니가 반드시 또 올께!!"
     ne "자! 그럼 다짐도 했겠다!!"
     ne "이제 내려가서 공항에 가자!"
+    hide ddmountain_1
 
+    show ddmountain_2
     nvl clear
     "유나은은 둥동산에서 내려와"
     "숙소에서 짐을 빼고 공항으로 향했다"
@@ -1121,8 +1135,9 @@ label start:
     "마지막 순간까지 행복한 기억들만 담고자"
     "유나은은 기쁜 마음으로 공항에 갔다"
     "그렇게 비행기까지 탑승을 마쳤는데.."
+    hide ddmountain_2
 
-    # image: 비행기 안 사진
+    show fwiss_airport
     na "(비행기 좌석에 앉은 유나은)" with fade
     ne "읏차! 이제 진짜 한국으로 가는구나"
     ne "시원섭섭하지만.. 프위스에서 좋은 기운 잔뜩 받아왔으니"
@@ -1152,6 +1167,7 @@ label start:
     "본격적으로 안대와 목베게를 하고 취침에 들어갔다"
     "눈을 감으면서 이번 여행이 어땠는지 다시 생각해보며"
     "스르륵 잠에 들었다"
+    hide fwiss_airport
 
 
     ## Ending ##
