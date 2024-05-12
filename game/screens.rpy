@@ -315,7 +315,7 @@ screen navigation():
 
             textbutton _("메인 메뉴") action MainMenu()
 
-        # textbutton _("버전정보") action ShowMenu("about")
+        textbutton _("도움말") action ShowMenu("about")
 
         # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -552,20 +552,39 @@ screen about():
     ## 이 use 명령어로 game_menu 스크린을 이 스크린 내에 불러옵니다. use 명령어
     ## 하위블럭(vbox 내용)은 game_menu 스크린 내 transclude 명령어가 있는 곳에
     ## 다시 불려집니다.
-    use game_menu(_("버전정보"), scroll="viewport"):
+    use game_menu(_("도움말"), scroll="viewport"):
 
         style_prefix "about"
 
         vbox:
 
             label "[config.name!t]"
-            text _("버전 [config.version!t]\n")
+            # text _("버전 [config.version!t]")
 
-            ## gui.about 의 내용은 보통 options.rpy에 있습니다.
-            if gui.about:
-                text "[gui.about!t]\n"
+            text """
+나의 프위스 <좌충우돌 6일간의 프위스 여행 일기> 는
+일상생활에 지친 주인공 유나은이 누군가로 부터 온 프위스 여행 초대권을 받고
+6일간의 프위스 여행을 즐기는 게임입니다.
 
-            text _("{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only] 으로 만들어진 게임.\n\n[renpy.license!t]")
+"프위스"는 프랑스와 스위스를 합친 본 게임에서의 가상의 나라입니다.
+프랑스의 특징도 스위스의 특징도 모두 가진(?) 신비로운 나라로
+프위스에서의 당신의 여행이 행복하길 바랍니다.
+
+그리고..
+당신의 삶에도 이때와 같은 순간이 있었다는걸 잊지말고
+앞으로의 삶을 더 화이팅하길 바라는 마음으로 이 게임을 만들었습니다.
+
+더 많은 행복과 사랑이 가득하길 기원합니다.
+마지막으로.. 당신의 생일을 진심으로 축하합니다 💕
+
+                                        - 게임 제작자 Brienz boy
+            """
+
+            # ## gui.about 의 내용은 보통 options.rpy에 있습니다.
+            # if gui.about:
+            #     text "[gui.about!t]\n"
+
+            # text _("{a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only] 으로 만들어진 게임.\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
