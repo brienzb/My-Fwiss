@@ -1160,7 +1160,9 @@ label start:
     
     ne "물론 여행와서 한식도 많이 만들어 먹었지만..!"
     ne "그래도 역시 헤헤.. 아시아나 쌈밥! 너무 그리웠어!!"
-    ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
+    
+    # [COMMENT] 상태 로그 확인
+    # ne "(현재 상태 => 건강: [healthy], 행복: [happy], 재미: [funny], 금전: [money]\n히든 포인트: [hidden])"
 
     nvl clear
     "유나은은 배부르게 밥을 먹은 뒤"
