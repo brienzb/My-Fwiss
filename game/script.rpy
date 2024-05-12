@@ -1172,7 +1172,6 @@ label start:
 
     ## Ending ##
 
-    # image: 검은색 배경 (그냥 사진 X)
     stop music fadeout 2.0
     play music disney_ending fadein 2.0
 
@@ -1216,7 +1215,7 @@ label happy_ending:
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
 
-    # image: 집 (방 안 침대가 보이는 배경) 사진
+    show home
     ne "우리 집이잖아~?~?" with vpunch
     ne "뭐야.. 그러면 내가 지금까지 겪은 모든 건 전부다 꿈이였던건가..??"
     ne "헉.. 몬가 아쉽지만 ㅠㅠ"
@@ -1234,6 +1233,7 @@ label happy_ending:
     ne "우와 대박!!! 그러면 이건 진짜 프위스 여행권이자나~~~"
     ne "그럼 꿈이 아닌 진짜 프위스로~~"
     ne "떠나보자~~~~~!!"
+    hide home
 
     jump end_credits
 
@@ -1248,7 +1248,7 @@ label funny_ending:
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
 
-    # image: 집 (방 안 침대가 보이는 배경) 사진
+    show home
     ne "우리 집이잖아~?~?" with vpunch
     ne "뭐야.. 그러면 내가 지금까지 겪은 모든 건 전부다 꿈이였던건가..??"
     ne "헉.. 몬가 아쉽지만 ㅠㅠ"
@@ -1270,6 +1270,7 @@ label funny_ending:
     ne "끼야-호~!~!"
     ne "그럼 꿈이 아닌 진짜 프위스로~~"
     ne "떠나보자~~~~~!!"
+    hide home
     
     jump end_credits
 
@@ -1284,7 +1285,7 @@ label healthy_ending:
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
 
-    # image: 집 (방 안 침대가 보이는 배경) 사진
+    show home
     ne "우리 집이잖아~?~?" with vpunch
     ne "뭐야.. 그러면 내가 지금까지 겪은 모든 건 전부다 꿈이였던건가..??"
     ne "헉.. 몬가 아쉽지만 ㅠㅠ"
@@ -1306,6 +1307,7 @@ label healthy_ending:
     ne "그러면 다이어트 성공 기념(??)으로,,"
     ne "꿈이 아닌 진짜 프위스로~~"
     ne "떠나보자~~~~~!!"
+    hide home
     
     jump end_credits
 
@@ -1320,7 +1322,7 @@ label money_ending:
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
 
-    # image: 집 (방 안 침대가 보이는 배경) 사진
+    show home
     ne "우리 집이잖아~?~?" with vpunch
     ne "뭐야.. 그러면 내가 지금까지 겪은 모든 건 전부다 꿈이였던건가..??"
     ne "헉.. 몬가 아쉽지만 ㅠㅠ"
@@ -1339,6 +1341,7 @@ label money_ending:
     ne "그러면 꽁돈도 생겼겠다,,"
     ne "꿈이 아닌 진짜 프위스로~~"
     ne "떠나보자~~~~~!!"
+    hide home
     
     jump end_credits
 
@@ -1353,7 +1356,7 @@ label hidden_ending:
     ne "비행기는 도착한건가?"
     ne "엥..? 잠깐만.. 여기는..?"
 
-    # image: 샬레 사진
+    show brienz_home
     ne "샬레잖아..??" with vpunch
     ne "뭐야.. 난 분명 비행기를 타고 자고 있었던거 같은데 뭐지..?"
     
@@ -1371,6 +1374,7 @@ label hidden_ending:
     ne "꺄~~~~~!!!"
     ne "남은 스위스 여행 더더 행복하게~~"
     ne "즐겨보자~!~!"
+    hide brienz_home
     
     jump end_credits
 
@@ -1382,7 +1386,7 @@ label end_credits:
     "\n\n\n - 끝 - \n\n\n 지금까지 \n\n 나의 프위스 \n <좌충우돌 6일간의 프위스 여행 일기> \n\n 를 플레이 해주셔서 감사합니다 (_ _)" with fade
 
     nvl clear
-    "본 엔딩은 [choice_word]으로, 해당 엔딩을 포함하여 총 5개의 엔딩이 있습니다"
+    "본 엔딩은 [choice_word]으로,\n해당 엔딩을 포함하여 총 5개의 엔딩이 있습니다"
     "다른 엔딩도 궁금하다면 아래 선택지를 눌러서 확인해보세요~ ㅎ\n\n"
 
     menu (nvl=True):
